@@ -1,0 +1,26 @@
+@import '../../styling/variables.scss';
+
+
+
+.themeSwitcherBtn {
+    background-color: $white;
+
+    span {
+        margin-left: 0.5rem;
+    }
+
+    &:hover {
+        background-color: $black;
+
+        span {
+            color: $white
+        }
+
+        svg {
+            
+            path {
+                stroke: $white;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import '../../styling/variables.scss';
+
+
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    box-shadow: 0 0 1rem rgba($black, 0.15);
+}

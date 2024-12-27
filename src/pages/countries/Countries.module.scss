@@ -1,0 +1,26 @@
+@import "../../styling/variables.scss";
+
+
+
+.countriesGrid {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 80px 160px auto; 
+    grid-template-areas: 
+        "navigation"
+        "sub-header"
+        "countries-list"
+    ;
+
+    .navigation {
+        grid-area: navigation;
+    }
+
+    .subHeader {
+        grid-area: sub-header;
+    }
+
+    .countriesList {
+        grid-area: countries-list;
+    }
+}
