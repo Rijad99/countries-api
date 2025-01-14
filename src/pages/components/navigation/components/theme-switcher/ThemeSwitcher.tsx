@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { themeIcon } from '../../common/icons/icons';
+import { themeIcon } from '../../../../../common/icons/icons';
 
-import Button from '../button/Button';
-import { ButtonSize, ButtonType } from '../button/Button.types';
-import Svg from '../svg/Svg';
-import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../svg/Svg.types';
+import Button from '../../../../../components/button/Button';
+import { ButtonSize, ButtonType } from '../../../../../components/button/Button.types';
+import Svg from '../../../../../components/svg/Svg';
+import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
 
 import themeSwitcherStyle from './ThemeSwitcher.module.scss';
 

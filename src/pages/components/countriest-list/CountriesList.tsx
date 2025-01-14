@@ -1,4 +1,4 @@
-import countriesStyle from '../../pages/countries/Countries.module.scss';
+import countriesStyle from '../../countries/Countries.module.scss';
 
 
 

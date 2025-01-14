@@ -1,6 +1,6 @@
-import { ThemeSwitcher } from '../theme-switcher/ThemeSwitcher';
+import { ThemeSwitcher } from './components/theme-switcher/ThemeSwitcher';
 
-import countriesStyle from '../../pages/countries/Countries.module.scss';
+import countriesStyle from '../../countries/Countries.module.scss';
 import navigationStyle from './Navigation.module.scss';
 
 
