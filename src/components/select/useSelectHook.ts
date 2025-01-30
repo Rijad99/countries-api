@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 
 // Types
 import { Option } from './components/options/Options.types';
-import useOutsideClickHook from '../../custom-hooks/useOutsideClickHook';
+import useOutsideClickHook from '../../common/custom-hooks/useOutsideClickHook';
 
 function useSelectHook(onOptionChange: (option: Option) => void) {
   const [isSelectOpen, setIsSelectOpen] = useState<boolean>(false);

@@ -1,6 +1,3 @@
-// React
-import React from 'react';
-
 // CSS
 import optionsCSS from './Options.module.scss';
 

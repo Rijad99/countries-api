@@ -8,7 +8,7 @@ import selectedOptionCSS from './SelectedOption.module.scss';
 import { SelectedOptionProps } from './SelectedOption.types';
 
 // Icons
-import { arrowIcon } from '../../../../icons/icons';
+import { arrowIcon } from '../../../../common/icons/icons';
 
 // Components
 import Svg from '../../../svg/Svg';

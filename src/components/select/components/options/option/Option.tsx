@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { OptionProps } from './Option.types';
 import optionsCSS from '../Options.module.scss';
 
