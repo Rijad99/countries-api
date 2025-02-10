@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Select from "../../../../../components/select/Select";
 import { Option } from "../../../../../components/select/components/options/Options.types";
+import regionsFilterSelectStyle from './RegionsFilter.module.scss';
 
 
 
@@ -35,6 +36,6 @@ export function RegionsFilter() {
     }
 
     return (
-        <Select placeholder="Filter by Region" selectedOption={selectedRegion} options={regions} onOptionChange={handleFilterChange}/>
+        <Select additionalClasses={regionsFilterSelectStyle.regionsFilterSelect} placeholder="Filter by Region" selectedOption={selectedRegion} options={regions} onOptionChange={handleFilterChange} />
     )
 }

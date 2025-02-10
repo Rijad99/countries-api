@@ -19,8 +19,8 @@ function SelectedOption({ selectedOption, isSelectOpen, placeholder, selectedOpt
     onSelectOpen();
   }, [onSelectOpen]);
 
-  const renderIcon = selectedOption.icon && <img src={selectedOption.icon} />;
-  const renderValue = selectedOption.value ? selectedOption.value : placeholder;
+  const renderIcon = selectedOption?.icon && <img src={selectedOption.icon} />;
+  const renderValue = selectedOption?.value ? selectedOption.value : placeholder;
 
   return (
     <div

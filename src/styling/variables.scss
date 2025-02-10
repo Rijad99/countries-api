@@ -4,7 +4,7 @@ $font: "Poppins";
 
 // Typography
 
-$small: 0.0625rem;
+$small: 0.625rem;
 $medium: 1rem;
 
 // Typography weights
@@ -17,9 +17,11 @@ $boldest: 600;
 
 // Colors
 
-// Neutral
+$neutral: #636e72;
 
 $black: hsl(180, 8%, 3%);
+$black5: hsl(0, 0%, 90%);
+
 $darkBlue: hsl(209, 23%, 22%);
 $veryLightBlue: hsl(207, 26%, 17%);
 $veryDarkBlue: hsl(200, 15%, 8%);
