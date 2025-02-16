@@ -30,7 +30,7 @@ export function CountriesList() {
             })
     }, [])
 
-    const renderAllCountries = countries && countries.map((country, index) => <CountryCard key={index} flag={country.flags.png} name={country.name.common} />)
+    const renderAllCountries = countries && countries.map((country, index) => <CountryCard key={index} flag={country.flags.png} name={country.name.common} population={country.population} region={country.region} capital={country.capital} />)
 
     return (
         <div className={`${countriesStyle.countriesList} ${countriesListStyle.countries}`}>

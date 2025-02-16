@@ -4,7 +4,7 @@
 
 .countriesGrid {
     display: grid;
-    grid-template-columns: 100vw;
+    grid-template-columns: 100%;
     grid-template-rows: 80px 160px auto; 
     grid-template-areas: 
         "navigation"

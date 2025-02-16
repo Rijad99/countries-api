@@ -5,6 +5,8 @@
 .countryCard {
     background-color: $white;
     box-shadow: 0 0 10px rgba($black, 0.075);
+    border-radius: 8px;
+    cursor: pointer;
     overflow: hidden;
 }
 

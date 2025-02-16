@@ -1,9 +1,23 @@
 @import '../../../../../styling/variables.scss';
 
 .countryContent {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 2.5rem 1rem;
 }
 
 .name {
     font-weight: $boldest;
+}
+
+.countryBaseInfo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    
+    span {
+        font-size: $small;
+    }
+
+    .infoLabel {
+        font-weight: $bold;
+    }
 }
