@@ -12,7 +12,7 @@ const regions: Option[] = [
     },
     {
         id: 1,
-        value: 'America'
+        value: 'Americas'
     },
     {
         id: 2,
