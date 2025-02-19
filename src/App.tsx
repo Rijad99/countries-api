@@ -4,7 +4,7 @@ import "./styling/main.scss";
 // Components
 import { Countries } from "./pages/countries/Countries";
 
-// Context
+// Providers
 import { CountriesProvider } from "./context/CountriesContext";
 
 
