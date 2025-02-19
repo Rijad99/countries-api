@@ -49,8 +49,6 @@ export function RegionsFilter() {
     const handleCountriesUpdateByRegion = (option: Option) => {
         setSelectedRegion(option);
 
-        console.log(option.value.toLowerCase())
-
         getCountriesByRegion(option.value.toLowerCase())
             .then(data => {
                 setCountries(data)

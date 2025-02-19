@@ -29,7 +29,6 @@ const CountriesProvider: React.FC<CountriesProviderProps> = ({ children }) => {
     useEffect(() => {
         getAllCountries()
             .then((data) => {
-                console.log(data);
                 setCountries(data);
             })
             .catch((error) => {
