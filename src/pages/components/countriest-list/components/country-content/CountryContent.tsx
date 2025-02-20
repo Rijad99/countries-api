@@ -10,9 +10,7 @@ export interface CountryContentProps {
     capital: string
 }
 
-export function CountryContent(props: CountryContentProps) {
-
-    const { name, population, region, capital }= props;
+export function CountryContent({ name, population, region, capital }: CountryContentProps) {
 
     return (
         <div className={countryContentStyle.countryContent}>

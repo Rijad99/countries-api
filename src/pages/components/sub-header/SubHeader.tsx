@@ -1,5 +1,8 @@
+// Styles
 import countriesStyle from '../../countries/Countries.module.scss';
 import subHeaderStyle from './SubHeader.module.scss';
+
+// Components
 import { RegionsFilter } from './components/regions-filter/RegionsFilter';
 
 

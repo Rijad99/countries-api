@@ -1,5 +1,7 @@
+// Components
 import { ThemeSwitcher } from './components/theme-switcher/ThemeSwitcher';
 
+// Styles
 import countriesStyle from '../../countries/Countries.module.scss';
 import navigationStyle from './Navigation.module.scss';
 

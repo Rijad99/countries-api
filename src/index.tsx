@@ -1,5 +1,10 @@
+// React
 import ReactDOM from 'react-dom/client';
+
+// Components
 import App from './App';
+
+
 
 const rootEl = document.getElementById('root');
 

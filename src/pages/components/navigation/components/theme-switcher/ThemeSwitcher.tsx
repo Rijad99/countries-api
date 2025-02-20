@@ -1,11 +1,18 @@
+// React
 import { useState } from 'react';
-import { themeIcon } from '../../../../../common/icons/icons';
 
+// Icons
+import { icons } from '../../../../../common/icons/icons';
+
+// Components
 import Button from '../../../../../components/button/Button';
-import { ButtonSize, ButtonType } from '../../../../../components/button/Button.types';
 import Svg from '../../../../../components/svg/Svg';
+
+// Types
+import { ButtonSize, ButtonType } from '../../../../../components/button/Button.types';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
 
+// Styles
 import themeSwitcherStyle from './ThemeSwitcher.module.scss';
 
 
@@ -30,7 +37,7 @@ export function ThemeSwitcher() {
     
     return (
         <Button size={ButtonSize.MEDIUM} type={ButtonType.PRIMARY} onClick={handleChangeTheme} additionalClasses={themeSwitcherStyle.themeSwitcherBtn}>
-            <Svg width='24' height='24' viewBox='0 0 24 24' path={themeIcon} additionalClasses={SvgColors.BLACK} stroke={SvgColors.BLACK} strokeWidth='1.5' strokeLinecap={SvgStrokeLineCap.ROUND} strokeLinejoin={SvgStrokeLineJoin.ROUND} />
+            <Svg width='24' height='24' viewBox='0 0 24 24' path={icons.themeIcon} additionalClasses={SvgColors.BLACK} stroke={SvgColors.BLACK} strokeWidth='1.5' strokeLinecap={SvgStrokeLineCap.ROUND} strokeLinejoin={SvgStrokeLineJoin.ROUND} />
             <span>{currentTheme}</span>
         </Button>
     )

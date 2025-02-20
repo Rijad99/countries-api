@@ -1,5 +1,9 @@
+// Components
 import { CountryContent } from '../country-content/CountryContent';
+
+// Styles
 import countryCardStyle from './CountryCard.module.scss';
+
 
 
 export interface CountryProps {
@@ -10,9 +14,7 @@ export interface CountryProps {
     capital: string
 }
 
-export function CountryCard(props: CountryProps) {
-
-    const { name, flag, population, region, capital }= props;
+export function CountryCard({ name, flag, population, region, capital }: CountryProps) {
 
     return (
         <div className={countryCardStyle.countryCard}>

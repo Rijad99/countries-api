@@ -8,11 +8,13 @@ import selectedOptionCSS from './SelectedOption.module.scss';
 import { SelectedOptionProps } from './SelectedOption.types';
 
 // Icons
-import { arrowIcon } from '../../../../common/icons/icons';
+import { icons } from '../../../../common/icons/icons';
 
 // Components
 import Svg from '../../../svg/Svg';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../svg/Svg.types';
+
+
 
 function SelectedOption({ selectedOption, isSelectOpen, placeholder, selectedOptionAdditionalClasses, onSelectOpen }: SelectedOptionProps) {
   const handleSelectOpen = useCallback(() => {
@@ -33,7 +35,7 @@ function SelectedOption({ selectedOption, isSelectOpen, placeholder, selectedOpt
           {renderValue}
         </div>
         <Svg
-          path={arrowIcon}
+          path={icons.arrowIcon}
           width="8"
           height="6"
           strokeWidth="1.5"
