@@ -1,5 +1,7 @@
-// Styles
+// Components
 import { Label } from '../../../../../components/label/Label';
+
+// Styles
 import countryContentStyle from './CountryContent.module.scss';
 
 
