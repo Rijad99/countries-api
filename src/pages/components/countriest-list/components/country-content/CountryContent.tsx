@@ -1,4 +1,5 @@
 // Styles
+import { Label } from '../../../../../components/label/Label';
 import countryContentStyle from './CountryContent.module.scss';
 
 
@@ -16,9 +17,9 @@ export function CountryContent({ name, population, region, capital }: CountryCon
         <div className={countryContentStyle.countryContent}>
             <span className={countryContentStyle.name}>{name}</span>
             <div className={countryContentStyle.countryBaseInfo}>
-                <span><span className={countryContentStyle.infoLabel}>Population:</span> {population}</span>
-                <span><span className={countryContentStyle.infoLabel}>Region:</span> {region}</span>
-                <span><span className={countryContentStyle.infoLabel}>Capital:</span> {capital}</span>
+                <Label title='Population' value={population} />
+                <Label title='Region' value={region} />
+                <Label title='Capital' value={capital} />
             </div>
         </div>
     )

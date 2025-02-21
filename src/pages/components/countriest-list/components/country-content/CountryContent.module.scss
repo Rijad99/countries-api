@@ -7,17 +7,3 @@
 .name {
     font-weight: $boldest;
 }
-
-.countryBaseInfo {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0.5rem;
-    
-    span {
-        font-size: $small;
-    }
-
-    .infoLabel {
-        font-weight: $bold;
-    }
-}
