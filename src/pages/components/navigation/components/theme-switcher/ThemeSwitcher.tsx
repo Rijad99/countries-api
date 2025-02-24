@@ -1,5 +1,5 @@
 // React
-import { useState } from 'react';
+import { useContext } from 'react';
 
 // Icons
 import { icons } from '../../../../../common/icons/icons';
@@ -15,6 +15,9 @@ import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../c
 // Styles
 import themeSwitcherStyle from './ThemeSwitcher.module.scss';
 
+// Contexts
+import { ThemeContext } from '../../../../../context/ThemeContext';
+
 
 
 export enum Theme {
@@ -23,15 +26,18 @@ export enum Theme {
 }
 
 export function ThemeSwitcher() {
-    const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+    const { theme, setTheme } = useContext(ThemeContext);
 
     const currentTheme = theme === Theme.LIGHT ? 'Dark Mode' : 'Light Mode';
 
     const handleChangeTheme = () => {
         if (theme === Theme.LIGHT) {
             setTheme(Theme.DARK)
+            localStorage.setItem('theme', Theme.DARK)
+            
         } else {
             setTheme(Theme.LIGHT)
+            localStorage.setItem('theme', Theme.LIGHT)
         }
     }
     

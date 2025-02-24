@@ -6,15 +6,19 @@ import { Countries } from "./pages/countries/Countries";
 
 // Providers
 import { CountriesProvider } from "./context/CountriesContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 
 
 const App = () => {
 	
  	return (
-		<CountriesProvider>
-			<Countries />
-		</CountriesProvider>
+		<ThemeProvider>
+			<CountriesProvider>
+				<Countries />
+			</CountriesProvider>
+		</ThemeProvider>
+
 	);
 };
 
