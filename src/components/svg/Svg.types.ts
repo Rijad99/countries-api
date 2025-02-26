@@ -16,6 +16,7 @@ export interface SvgProps {
 export enum SvgColors {
   BLACK = 'black',
   GRAY = 'gray',
+  WHITE = 'white',
 }
 
 export enum SvgFillRule {

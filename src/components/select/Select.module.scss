@@ -1,5 +1,15 @@
+@import '../../styling/variables.scss';
+
 .selectContainer {
   width: -webkit-fill-available;
   position: relative;
   z-index: 1;
+}
+
+.light {
+  background-color: $white;
+}
+
+.dark {
+  background-color: $darkBlue;
 }

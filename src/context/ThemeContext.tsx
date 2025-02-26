@@ -10,12 +10,12 @@ import themeStyle from '../styling/themes.module.scss';
 
 
 interface ThemeContextProps {
-    theme: string | null
+    theme: string
     setTheme: (theme: string) => void
 }
 
 const ThemeContext = createContext<ThemeContextProps>({
-    theme: null,
+    theme: 'light',
     setTheme: () => null
 })
 
@@ -26,17 +26,24 @@ interface ThemeProviderProps {
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState<string>(Theme.LIGHT);
 
+    const currentTheme = localStorage.getItem('theme');
+
     useEffect(() => {
-        localStorage.setItem('theme', theme);
+        if (!currentTheme) {
+            localStorage.setItem('theme', theme)
+        } else {
+            setTheme(currentTheme)
+        }
 
         if (theme === "light") {
-            document.documentElement.classList.remove(themeStyle.darkMode);
-            document.documentElement.classList.add(themeStyle.lightMode);
+            document.body.classList.remove(themeStyle.darkMode);
+            document.body.classList.add(themeStyle.lightMode);
 
           } else {
-            document.documentElement.classList.remove(themeStyle.lightMode);
-            document.documentElement.classList.add(themeStyle.darkMode);
+            document.body.classList.remove(themeStyle.lightMode);
+            document.body.classList.add(themeStyle.darkMode);
           }
+
     }, [theme])
 
     const value = {

@@ -17,8 +17,29 @@
     margin-left: 2rem;
     border: 0;
     outline: none;
+}
+
+.light {
+    background-color: $white;
     
-    &::placeholder {
-        color: $gray;
+    input {
+        background-color: $white;
+
+        &::placeholder {
+            color: $gray;
+        }
+    }
+}
+
+.dark {
+    background-color: $darkBlue;
+
+    input {
+        background-color: $darkBlue;
+        color: $white;
+
+        &::placeholder {
+            color: $white;
+        }
     }
 }

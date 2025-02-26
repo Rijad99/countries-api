@@ -1,3 +1,6 @@
+// React
+import { useContext } from 'react';
+
 // Components
 import { ThemeSwitcher } from './components/theme-switcher/ThemeSwitcher';
 
@@ -5,12 +8,16 @@ import { ThemeSwitcher } from './components/theme-switcher/ThemeSwitcher';
 import countriesStyle from '../../countries/Countries.module.scss';
 import navigationStyle from './Navigation.module.scss';
 
+// Contexts
+import { ThemeContext } from '../../../context/ThemeContext';
+
 
 
 export function Navigation() {
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <nav className={`${countriesStyle.navigation} ${navigationStyle.navigation}`}>
+        <nav className={`${navigationStyle[theme]} ${countriesStyle.navigation} ${navigationStyle.navigation}`}>
             <NavigationTitle title='Where in the world?' />
             <ThemeSwitcher />
         </nav>

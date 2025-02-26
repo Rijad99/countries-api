@@ -4,7 +4,6 @@
   width: 100%;
   position: absolute;
   border-radius: 8px;
-  background-color: $white;
   padding: 0.5rem;
   box-shadow: 0 0 10px rgba($black, 0.075);
 }
@@ -15,14 +14,13 @@
   align-items: center;
   font-size: $small;
   font-weight: $bold;
-  color: $black;
-  padding: 0 0.5rem;
+  padding-left: 0.5rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 200ms ease;
 
   &:hover {
-    background-color: $black5;
+    padding-left: 1rem;
   }
 
   img {

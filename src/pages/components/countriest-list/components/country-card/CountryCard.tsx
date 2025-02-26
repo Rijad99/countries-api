@@ -1,8 +1,14 @@
+// React
+import { useContext } from 'react';
+
 // Components
 import { CountryContent } from '../country-content/CountryContent';
 
 // Styles
 import countryCardStyle from './CountryCard.module.scss';
+
+// Contexts
+import { ThemeContext } from '../../../../../context/ThemeContext';
 
 
 
@@ -15,9 +21,10 @@ export interface CountryProps {
 }
 
 export function CountryCard({ name, flag, population, region, capital }: CountryProps) {
+    const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={countryCardStyle.countryCard}>
+        <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`}>
             <img src={`${flag}`} className={countryCardStyle.flag} />
             <CountryContent name={name} population={population} region={region} capital={capital} />
         </div>

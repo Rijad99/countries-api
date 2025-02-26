@@ -1,5 +1,6 @@
 // CSS
 import optionsCSS from './Options.module.scss';
+import selectCSS from '../../Select.module.scss';
 
 // Types
 import { OptionsProps } from './Options.types';
@@ -10,8 +11,11 @@ import { motion } from 'framer-motion';
 // Options hook
 import useOptionsHook from './useOptionsHook';
 import { Option } from './option/Option';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../../context/ThemeContext';
 
 function Options(props: OptionsProps) {
+  const { theme } = useContext(ThemeContext)
   const { optionsVariant, handleOptionChange } = useOptionsHook(props.onOptionChange);
 
   const options = props.options.map((option) => (
@@ -22,7 +26,7 @@ function Options(props: OptionsProps) {
 
   return (
     <motion.ul
-      className={optionsCSS.optionsList}
+      className={`${selectCSS[theme]} ${optionsCSS.optionsList}`}
       initial={{
         opacity: 0,
         transform: 'translateY(-20px)',

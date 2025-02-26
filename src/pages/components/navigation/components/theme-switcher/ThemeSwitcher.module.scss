@@ -3,24 +3,9 @@
 
 
 .themeSwitcherBtn {
-    background-color: $white;
+    background-color: transparent;
 
     span {
         margin-left: 0.5rem;
-    }
-
-    &:hover {
-        background-color: $black;
-
-        span {
-            color: $white
-        }
-
-        svg {
-            
-            path {
-                stroke: $white;
-            }
-        }
     }
 }
