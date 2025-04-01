@@ -17,14 +17,15 @@ export interface CountryProps {
     name: string
     population: number,
     region: string,
-    capital: string
+    capital: string,
+    handleOpenCountryDetailsDialog: () => void
 }
 
-export function CountryCard({ name, flag, population, region, capital }: CountryProps) {
+export function CountryCard({ name, flag, population, region, capital, handleOpenCountryDetailsDialog }: CountryProps) {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`}>
+        <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`} onClick={handleOpenCountryDetailsDialog}>
             <img src={`${flag}`} className={countryCardStyle.flag} />
             <CountryContent name={name} population={population} region={region} capital={capital} />
         </div>
