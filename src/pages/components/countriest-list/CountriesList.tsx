@@ -7,7 +7,7 @@ import countriesListStyle from './CountriesList.module.scss';
 
 // Components
 import { CountryCard } from './components/country-card/CountryCard';
-import { Dialog } from '../../../components/dialog/Dialog';
+import CountryDetailsDialog from './components/country-details-dialog/CountryDetailsDialog';
 
 // Contexts
 import { CountriesContext } from '../../../context/CountriesContext';
@@ -16,12 +16,13 @@ import { CountriesContext } from '../../../context/CountriesContext';
 import { useCountriesListHook } from './components/useCountriesListHook';
 
 
+
 export function CountriesList() {
     const { countries } = useContext(CountriesContext);
-    const { handleOpenCountryDetailsDialog, isDialogOpen } = useCountriesListHook();
+    const { handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog, isCountryDetailsDialogOpen } = useCountriesListHook();
 
     const renderAllCountries = countries && countries.map((country, index) => <CountryCard key={index} flag={country.flags.png} name={country.name.common} population={country.population} region={country.region} capital={country.capital} handleOpenCountryDetailsDialog={handleOpenCountryDetailsDialog} />)
-    const renderCountryDetailsDialog = isDialogOpen && <Dialog />
+    const renderCountryDetailsDialog = isCountryDetailsDialogOpen && <CountryDetailsDialog handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog} />
 
     return (
         <div className={`${countriesStyle.countriesList} ${countriesListStyle.countries}`}>

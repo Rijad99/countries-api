@@ -4,15 +4,15 @@ import { useState } from "react"
 
 
 export function useCountriesListHook() {
-    const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+    const [isCountryDetailsDialogOpen, setIsCountryDetailsDialogOpen] = useState<boolean>(false);
 
     const handleOpenCountryDetailsDialog = () => {
-        setIsDialogOpen(true)
+        setIsCountryDetailsDialogOpen(true)
     }
 
     const handleCloseCountryDetailsDialog = () => {
-        setIsDialogOpen(false)
+        setIsCountryDetailsDialogOpen(false)
     }
 
-    return { handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog, isDialogOpen }
+    return { handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog, isCountryDetailsDialogOpen }
 }
