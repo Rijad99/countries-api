@@ -28,12 +28,8 @@ const CountriesProvider: React.FC<CountriesProviderProps> = ({ children }) => {
 
     useEffect(() => {
         getAllCountries()
-            .then((data) => {
-                setCountries(data);
-            })
-            .catch((error) => {
-                console.log(error)
-            })
+            .then(data => setCountries(data))
+            .catch(error => console.log(error))  
     }, [])
 
     const value = {

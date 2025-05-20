@@ -13,3 +13,10 @@ export const getCountriesByRegion = async (region: string) => {
 
     return data;
 }
+
+export const getCountryByName = async (country: string) => {
+    const response = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    const data = await response.json();
+
+    return data;
+}

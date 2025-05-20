@@ -13,8 +13,23 @@
 }
 
 .closeCountryDetailsDialogButton {
-    background-color: $white;
     box-shadow: 0 0 10px rgba($black, 0.075);
+}
+
+.light {
+    background-color: $white;
+}
+
+.lightBg {
+    background-color: $white;
+}
+
+.dark {
+    background-color: $veryLightBlue;
+}
+
+.darkBg {
+    background-color: $darkBlue;
 }
 
 .arrowIcon {

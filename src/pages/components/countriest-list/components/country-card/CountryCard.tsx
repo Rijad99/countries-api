@@ -18,14 +18,18 @@ export interface CountryProps {
     population: number,
     region: string,
     capital: string,
-    handleOpenCountryDetailsDialog: () => void
+    handleOpenCountryDetailsDialog: (country: string) => void
 }
 
 export function CountryCard({ name, flag, population, region, capital, handleOpenCountryDetailsDialog }: CountryProps) {
     const { theme } = useContext(ThemeContext);
 
+    const handleGetCountryAndOpenDetailsDialog = () => {
+        handleOpenCountryDetailsDialog(name);
+    }
+
     return (
-        <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`} onClick={handleOpenCountryDetailsDialog}>
+        <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`} onClick={handleGetCountryAndOpenDetailsDialog}>
             <img src={`${flag}`} className={countryCardStyle.flag} />
             <CountryContent name={name} population={population} region={region} capital={capital} />
         </div>
