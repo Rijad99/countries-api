@@ -23,7 +23,7 @@ export function useCountriesListHook() {
 
     const handleGetCountryData = (country: string) => {
         getCountryByName(country)
-            .then(data => setCountry(data))
+            .then(data => setCountry(data[0]))
             .catch(error => console.log(error));
     }
 
