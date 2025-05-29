@@ -2,7 +2,18 @@
 
 .countryDetailsContainer {
     display: flex;
-    gap: 5rem;
     justify-content: center;
+    align-items: center;
+    gap: 5rem;
     margin-top: 5rem;
+}
+
+.rightPartCountryInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.flag {
+    width: 550px;
+    height: 300px;
 }

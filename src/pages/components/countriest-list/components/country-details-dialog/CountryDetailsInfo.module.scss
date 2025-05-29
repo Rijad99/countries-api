@@ -1,0 +1,13 @@
+@import '../../../../../styling/variables.scss';
+
+.countryDetails {
+    display: flex;
+    gap: 10rem;
+    margin-top: 1rem;
+}
+
+.countryDetailsInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}

@@ -3,17 +3,26 @@ import labelStyle from './Label.module.scss';
 
 
 
-export interface LabelProps {
-    title: string,
-    value: string | number
+export enum LabelType {
+    SMALL = 'SMALL',
+    LARGE = 'LARGE'
 }
 
-export function Label({ title, value }: LabelProps) {
+export interface LabelProps {
+    title: string,
+    value?: string | number
+    type?: LabelType
+}
+
+export function Label({ title, value, type }: LabelProps) {
+
+    const renderValue = value ? <span className={labelStyle.label}>{value}</span> : null;
+    const labelType = type === LabelType.LARGE ? labelStyle.large : labelStyle.small;
 
     return (
-        <div>
-            <span className={`${labelStyle.label} ${labelStyle.labelTitle}`}>{title}: </span>
-            <span className={labelStyle.label}>{value}</span>
+        <div className={labelType}>
+            <span className={`${labelStyle.labelTitle}`}>{title}: </span>
+            {renderValue}
         </div>
     )
 }
