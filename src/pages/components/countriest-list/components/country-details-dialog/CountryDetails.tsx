@@ -12,7 +12,7 @@ export interface CountryDetailsProps {
 }
 
 export function CountryDetails({ country }: CountryDetailsProps) {
-
+    
     return (
         <div className={countryDetailsStyle.countryDetailsContainer}>
             <div className={countryDetailsStyle.leftPartCountryInfo}>
@@ -20,8 +20,8 @@ export function CountryDetails({ country }: CountryDetailsProps) {
             </div>
             <div className={countryDetailsStyle.rightPartCountryInfo}>
                 <h1>{country?.name.common}</h1>
-                <CountryDetailsInfo />
-                <CountryDetailsBorders />
+                <CountryDetailsInfo country={country}  />
+                <CountryDetailsBorders country={country} />
             </div>
         </div>
     )

@@ -10,7 +10,7 @@ export enum LabelType {
 
 export interface LabelProps {
     title: string,
-    value?: string | number
+    value?: string | number,
     type?: LabelType
 }
 

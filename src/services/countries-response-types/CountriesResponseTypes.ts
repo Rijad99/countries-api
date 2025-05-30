@@ -14,5 +14,21 @@ export interface Country {
     name: CountryNames
     population: number,
     region: string,
-    capital: string
+    capital: string,
+    subregion: string,
+    tld: string[],
+    currencies: Currency,
+    languages: Language
+    borders: string[],
+}
+
+export interface Currency {
+    [key: string]: {
+        symbol: string,
+        name: string
+    }
+}
+
+export interface Language {
+    [key: string]: string
 }
