@@ -2,10 +2,10 @@
 import { useState } from "react"
 
 // Types
-import { Country } from "../../../../services/countries-response-types/CountriesResponseTypes";
+import { Country } from "../../../services/countries-response-types/CountriesResponseTypes";
 
 // Service
-import { getCountryByName } from "../../../../services/CountriesService";
+import { getCountryByName } from "../../../services/CountriesService";
 
 
 export function useCountriesListHook() {

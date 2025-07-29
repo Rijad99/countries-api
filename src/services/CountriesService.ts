@@ -1,6 +1,6 @@
 export const getAllCountries = async () => {
     
-    const response = await fetch('https://restcountries.com/v3.1/all');
+    const response = await fetch('https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital,subregion,tld,currencies,languages,borders');
     const data = await response.json();
 
     return data;

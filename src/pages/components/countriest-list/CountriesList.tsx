@@ -13,7 +13,7 @@ import CountryDetailsDialog from './components/country-details-dialog/CountryDet
 import { CountriesContext } from '../../../context/CountriesContext';
 
 // Custom hooks
-import { useCountriesListHook } from './components/useCountriesListHook';
+import { useCountriesListHook } from './useCountriesListHook';
 
 
 
