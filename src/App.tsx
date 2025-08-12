@@ -7,17 +7,23 @@ import { Countries } from "./pages/countries/Countries";
 // Providers
 import { CountriesProvider } from "./context/CountriesContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 
 
 const App = () => {
-	
+
+	const queryClient = new QueryClient();
+
  	return (
-		<ThemeProvider>
-			<CountriesProvider>
-				<Countries />
-			</CountriesProvider>
-		</ThemeProvider>
+
+		<QueryClientProvider client={queryClient}>
+			<ThemeProvider>
+				<CountriesProvider>
+					<Countries />
+				</CountriesProvider>
+			</ThemeProvider>
+		</QueryClientProvider>
 
 	);
 };

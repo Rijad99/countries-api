@@ -24,13 +24,11 @@ import { ThemeContext } from "../../../../../context/ThemeContext";
 
 
 
-
 export interface CountryDetailsDialogProps {
-    country: Country | undefined,
     handleCloseCountryDetailsDialog: () => void,
 }
 
-function CountryDetailsDialog({ country, handleCloseCountryDetailsDialog }: CountryDetailsDialogProps) {
+function CountryDetailsDialog({ handleCloseCountryDetailsDialog }: CountryDetailsDialogProps) {
     const { theme } = useContext(ThemeContext);
 
     const themeIconStrokeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;
@@ -41,7 +39,7 @@ function CountryDetailsDialog({ country, handleCloseCountryDetailsDialog }: Coun
                 <Svg width='8' height='6' viewBox='0 0 12 7' path={icons.arrowIcon} additionalClasses={`${countryDetailsDialogStyle.arrowIcon} ${SvgColors.BLACK}`} stroke={themeIconStrokeColor} strokeWidth='1.5' strokeLinecap={SvgStrokeLineCap.ROUND} strokeLinejoin={SvgStrokeLineJoin.ROUND} />
                 Back
             </Button>
-            <CountryDetails country={country} />
+            <CountryDetails />
         </Dialog>
     )
 }

@@ -6,7 +6,6 @@ import countryDetailsStyle from './CountryDetails.module.scss';
 import { CountryDetailsInfo } from './CountryDetailsInfo';
 import { CountryDetailsBorders } from './CountryDetailsBorders';
 
-
 export interface CountryDetailsProps {
     country: Country | undefined
 }

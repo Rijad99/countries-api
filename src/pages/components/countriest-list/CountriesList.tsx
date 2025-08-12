@@ -19,10 +19,10 @@ import { useCountriesListHook } from './useCountriesListHook';
 
 export function CountriesList() {
     const { countries } = useContext(CountriesContext);
-    const { country, handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog, isCountryDetailsDialogOpen } = useCountriesListHook();
-
+    const { handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog, isCountryDetailsDialogOpen } = useCountriesListHook();
+ 
     const renderAllCountries = countries && countries.map((country, index) => <CountryCard key={index} flag={country.flags.png} name={country.name.common} population={country.population} region={country.region} capital={country.capital} handleOpenCountryDetailsDialog={handleOpenCountryDetailsDialog} />)
-    const renderCountryDetailsDialog = isCountryDetailsDialogOpen && <CountryDetailsDialog country={country} handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog} />
+    const renderCountryDetailsDialog = isCountryDetailsDialogOpen && <CountryDetailsDialog handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog} />
 
     return (
         <div className={`${countriesStyle.countriesList} ${countriesListStyle.countries}`}>

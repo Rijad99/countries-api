@@ -18,14 +18,14 @@ export interface CountryProps {
     population: number,
     region: string,
     capital: string,
-    handleOpenCountryDetailsDialog: (country: string) => void
+    handleOpenCountryDetailsDialog: () => void
 }
 
 export function CountryCard({ name, flag, population, region, capital, handleOpenCountryDetailsDialog }: CountryProps) {
     const { theme } = useContext(ThemeContext);
-
+ 
     const handleGetCountryAndOpenDetailsDialog = () => {
-        handleOpenCountryDetailsDialog(name);
+        handleOpenCountryDetailsDialog();
     }
 
     return (
