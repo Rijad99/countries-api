@@ -25,10 +25,13 @@ import { ThemeContext } from "../../../../../context/ThemeContext";
 
 
 export interface CountryDetailsDialogProps {
+    country: Country | undefined,
+    isFetchingCountryDetails: boolean,
+    error: Error | null, 
     handleCloseCountryDetailsDialog: () => void,
 }
 
-function CountryDetailsDialog({ handleCloseCountryDetailsDialog }: CountryDetailsDialogProps) {
+function CountryDetailsDialog({ country, isFetchingCountryDetails, error, handleCloseCountryDetailsDialog }: CountryDetailsDialogProps) {
     const { theme } = useContext(ThemeContext);
 
     const themeIconStrokeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;
@@ -39,7 +42,7 @@ function CountryDetailsDialog({ handleCloseCountryDetailsDialog }: CountryDetail
                 <Svg width='8' height='6' viewBox='0 0 12 7' path={icons.arrowIcon} additionalClasses={`${countryDetailsDialogStyle.arrowIcon} ${SvgColors.BLACK}`} stroke={themeIconStrokeColor} strokeWidth='1.5' strokeLinecap={SvgStrokeLineCap.ROUND} strokeLinejoin={SvgStrokeLineJoin.ROUND} />
                 Back
             </Button>
-            <CountryDetails />
+            <CountryDetails country={country} isFetchingCountryDetails={isFetchingCountryDetails} error={error} />
         </Dialog>
     )
 }
