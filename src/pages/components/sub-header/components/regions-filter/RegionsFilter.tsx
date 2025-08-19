@@ -41,6 +41,8 @@ const regions: Option[] = [
     }
 ]
 
+
+
 export function RegionsFilter() {
     const [selectedRegion, setSelectedRegion] = useState<Option | null>(null);
 

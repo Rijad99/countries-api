@@ -5,16 +5,21 @@ import { SubHeader } from '../components/sub-header/SubHeader';
 
 // Styles
 import countriesStyle from './Countries.module.scss';
+import {
+  useCountriesLoader
+} from '../components/countriest-list/components/country-details-dialog/useCountriesLoader.ts';
 
 
 
 export function Countries() {
 
-    return (
-        <div className={countriesStyle.countriesGrid}>
-            <Navigation />
-            <SubHeader />
-            <CountriesList />
-        </div>
-    )
+  const { countries, error, isFetching } = useCountriesLoader();
+
+  return (
+    <div className={countriesStyle.countriesGrid}>
+      <Navigation />
+      <SubHeader />
+      <CountriesList countries={countries} countriesError={error} isFetchingCountries={isFetching} />
+    </div>
+  )
 }
