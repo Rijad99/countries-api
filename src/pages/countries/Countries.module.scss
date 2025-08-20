@@ -1,27 +1,24 @@
 @import '../../styling/variables.scss';
 
-
-
 .countriesGrid {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 80px 160px calc(100vh - 240px); 
-    grid-template-areas: 
-        "navigation"
-        "sub-header"
-        "countries-list"
-    ;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 80px 160px calc(100vh - 240px);
+  grid-template-areas:
+    'navigation'
+    'sub-header'
+    'countries-list';
 
-    .navigation {
-        grid-area: navigation;
-    }
+  .navigation {
+    grid-area: navigation;
+  }
 
-    .subHeader {
-        grid-area: sub-header;
-    }
+  .subHeader {
+    grid-area: sub-header;
+  }
 
-    .countriesList {
-        grid-area: countries-list;
-        overflow-y: auto;
-    }
+  .countriesList {
+    grid-area: countries-list;
+    overflow-y: auto;
+  }
 }

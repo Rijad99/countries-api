@@ -1,20 +1,18 @@
 @import '../../../styling/variables.scss';
 
-
-
 .navigation {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5rem;
-    box-shadow: 0 0 1rem rgba($black, 0.15);
-    z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  box-shadow: 0 0 1rem rgba($black, 0.15);
+  z-index: 11;
 }
 
 .light {
-    background-color: $white;
+  background-color: $white;
 }
 
 .dark {
-    background-color: $darkBlue;
+  background-color: $darkBlue;
 }

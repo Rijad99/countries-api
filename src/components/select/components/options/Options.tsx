@@ -15,11 +15,17 @@ import { useContext } from 'react';
 import { ThemeContext } from '../../../../context/ThemeContext';
 
 function Options(props: OptionsProps) {
-  const { theme } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
   const { optionsVariant, handleOptionChange } = useOptionsHook(props.onOptionChange);
 
   const options = props.options.map((option) => (
-    <Option key={option.id} id={option.id} value={option.value} icon={option.icon} onOptionChange={() => handleOptionChange(option)} />
+    <Option
+      key={option.id}
+      id={option.id}
+      value={option.value}
+      icon={option.icon}
+      onOptionChange={() => handleOptionChange(option)}
+    />
   ));
 
   const animateSelect = props.isSelectOpen ? optionsVariant.visible : optionsVariant.hidden;

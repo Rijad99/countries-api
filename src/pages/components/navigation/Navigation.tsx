@@ -11,26 +11,21 @@ import navigationStyle from './Navigation.module.scss';
 // Contexts
 import { ThemeContext } from '../../../context/ThemeContext';
 
-
-
 export function Navigation() {
-    const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
-    return (
-        <nav className={`${navigationStyle[theme]} ${countriesStyle.navigation} ${navigationStyle.navigation}`}>
-            <NavigationTitle title='Where in the world?' />
-            <ThemeSwitcher />
-        </nav>
-    )
+  return (
+    <nav className={`${navigationStyle[theme]} ${countriesStyle.navigation} ${navigationStyle.navigation}`}>
+      <NavigationTitle title="Where in the world?" />
+      <ThemeSwitcher />
+    </nav>
+  );
 }
 
 export interface NavigationTitleProps {
-    title: string
+  title: string;
 }
 
-export function NavigationTitle({ title } : NavigationTitleProps) {
-    
-    return (
-        <h1>{title}</h1>
-    )
+export function NavigationTitle({ title }: NavigationTitleProps) {
+  return <h1>{title}</h1>;
 }

@@ -5,14 +5,9 @@ import { SubHeader } from '../components/sub-header/SubHeader';
 
 // Styles
 import countriesStyle from './Countries.module.scss';
-import {
-  useCountriesLoader
-} from '../components/countriest-list/components/country-details-dialog/useCountriesLoader.ts';
-
-
+import { useCountriesLoader } from '../components/countriest-list/components/country-details-dialog/useCountriesLoader.ts';
 
 export function Countries() {
-
   const { countries, error, isFetching } = useCountriesLoader();
 
   return (
@@ -21,5 +16,5 @@ export function Countries() {
       <SubHeader />
       <CountriesList countries={countries} countriesError={error} isFetchingCountries={isFetching} />
     </div>
-  )
+  );
 }

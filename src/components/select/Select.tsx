@@ -11,7 +11,14 @@ import { SelectProps } from './Select.types';
 // Select hook
 import useSelectHook from './useSelectHook';
 
-function Select({ selectedOption, placeholder, options, selectedOptionAdditionalClasses, additionalClasses, onOptionChange }: SelectProps) {
+function Select({
+  selectedOption,
+  placeholder,
+  options,
+  selectedOptionAdditionalClasses,
+  additionalClasses,
+  onOptionChange,
+}: SelectProps) {
   const { selectRef, isSelectOpen, handleSelectOpen, handleOptionChange } = useSelectHook(onOptionChange);
 
   return (

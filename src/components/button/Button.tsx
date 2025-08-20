@@ -16,7 +16,10 @@ function Button(props: PropsWithChildren<ButtonProps>) {
   const buttonStyle = getButtonCSS(props.size, props.type);
 
   return (
-    <button className={`${buttonCSS.button} ${buttonStyle} ${props?.additionalClasses && props.additionalClasses}`} onClick={props.onClick}>
+    <button
+      className={`${buttonCSS.button} ${buttonStyle} ${props?.additionalClasses && props.additionalClasses}`}
+      onClick={props.onClick}
+    >
       {props.children}
     </button>
   );

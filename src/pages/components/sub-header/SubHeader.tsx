@@ -6,14 +6,11 @@ import subHeaderStyle from './SubHeader.module.scss';
 import { RegionsFilter } from './components/regions-filter/RegionsFilter';
 import { SearchInput } from './components/regions-filter/search-input/SearchInput';
 
-
-
 export function SubHeader() {
-
-    return (
-        <div className={`${countriesStyle.subHeader} ${subHeaderStyle.subHeader}`}>
-            <SearchInput />
-            <RegionsFilter />
-        </div>
-    )
+  return (
+    <div className={`${countriesStyle.subHeader} ${subHeaderStyle.subHeader}`}>
+      <SearchInput />
+      <RegionsFilter />
+    </div>
+  );
 }

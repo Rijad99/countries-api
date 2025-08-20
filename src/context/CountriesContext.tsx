@@ -1,43 +1,41 @@
 // React
-import { useState, useEffect, createContext } from "react"
+import { useState, useEffect, createContext } from 'react';
 
 // Response types
-import { Country } from "../services/countries-response-types/CountriesResponseTypes"
+import { Country } from '../services/countries-response-types/CountriesResponseTypes';
 
 // Service
-import { getAllCountries } from "../services/CountriesService"
-
-
+import { getAllCountries } from '../services/CountriesService';
 
 interface CountriesContextProps {
-    countries: Country[] | null,
-    setCountries: (countries: Country[]) => void
+  countries: Country[] | null;
+  setCountries: (countries: Country[]) => void;
 }
 
 const CountriesContext = createContext<CountriesContextProps>({
-    countries: null,
-    setCountries: () => null
-})
+  countries: null,
+  setCountries: () => null,
+});
 
 interface CountriesProviderProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const CountriesProvider: React.FC<CountriesProviderProps> = ({ children }) => {
-    const [countries, setCountries] = useState<Country[] | null>(null);
+  const [countries, setCountries] = useState<Country[] | null>(null);
 
-    useEffect(() => {
-        getAllCountries()
-            .then(data => setCountries(data))
-            .catch(error => console.log(error))  
-    }, [])
+  useEffect(() => {
+    getAllCountries()
+      .then((data) => setCountries(data))
+      .catch((error) => console.log(error));
+  }, []);
 
-    const value = {
-        countries,
-        setCountries
-    }
+  const value = {
+    countries,
+    setCountries,
+  };
 
-    return <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>
-}
+  return <CountriesContext.Provider value={value}>{children}</CountriesContext.Provider>;
+};
 
-export { CountriesContext, CountriesProvider }
+export { CountriesContext, CountriesProvider };

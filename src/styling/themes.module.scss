@@ -1,15 +1,13 @@
 @import '../styling/variables.scss';
 
-
-
 // Light Theme
 .lightMode {
-    background-color: $white;
-    color: $black;
+  background-color: $white;
+  color: $black;
 }
 
 // Dark Theme
 .darkMode {
-    background-color: $veryLightBlue;
-    color: $white;
+  background-color: $veryLightBlue;
+  color: $white;
 }

@@ -1,19 +1,19 @@
 @import '../../../../../styling/variables.scss';
 
 .countryDetailsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5rem;
-    margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 5rem;
 }
 
 .rightPartCountryInfo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .flag {
-    width: 550px;
-    height: 300px;
+  width: 550px;
+  height: 300px;
 }

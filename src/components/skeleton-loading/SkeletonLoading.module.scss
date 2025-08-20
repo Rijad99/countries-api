@@ -1,10 +1,8 @@
 @import '../../styling/variables.scss';
 
-
-
 .skeletonLoaderCircular {
-    background-color: $veryLightBlue;
-    border-radius: 8px;
+  background-color: $veryLightBlue;
+  border-radius: 8px;
 }
 
 .pulse {
@@ -13,11 +11,12 @@
 }
 
 @keyframes sk-pulse {
-    0%, 100% { 
-        opacity: 1;   
-    }
-    
-    50% { 
-        opacity: 0.5; 
-    }
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
 }

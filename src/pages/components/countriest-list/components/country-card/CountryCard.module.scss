@@ -1,23 +1,21 @@
 @import '../../../../../styling/variables.scss';
 
-
-
 .countryCard {
-    box-shadow: 0 0 10px rgba($black, 0.075);
-    border-radius: 8px;
-    cursor: pointer;
-    overflow: hidden;
+  box-shadow: 0 0 10px rgba($black, 0.075);
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .flag {
-    width: 100%;
-    height: 125px;
+  width: 100%;
+  height: 125px;
 }
 
 .light {
-    background-color: $white;
+  background-color: $white;
 }
 
 .dark {
-    background-color: $darkBlue;
+  background-color: $darkBlue;
 }

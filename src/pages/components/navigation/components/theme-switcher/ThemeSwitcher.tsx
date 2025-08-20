@@ -18,34 +18,46 @@ import themeSwitcherStyle from './ThemeSwitcher.module.scss';
 // Contexts
 import { ThemeContext } from '../../../../../context/ThemeContext';
 
-
-
 export enum Theme {
-    LIGHT = 'light',
-    DARK = 'dark'
+  LIGHT = 'light',
+  DARK = 'dark',
 }
 
 export function ThemeSwitcher() {
-    const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
-    const currentTheme = theme === Theme.LIGHT ? 'Dark Mode' : 'Light Mode';
-    const themeIconStrokeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;
+  const currentTheme = theme === Theme.LIGHT ? 'Dark Mode' : 'Light Mode';
+  const themeIconStrokeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;
 
-    const handleChangeTheme = () => {
-        if (theme === Theme.LIGHT) {
-            setTheme(Theme.DARK)
-            localStorage.setItem('theme', Theme.DARK)
-            
-        } else {
-            setTheme(Theme.LIGHT)
-            localStorage.setItem('theme', Theme.LIGHT)
-        }
+  const handleChangeTheme = () => {
+    if (theme === Theme.LIGHT) {
+      setTheme(Theme.DARK);
+      localStorage.setItem('theme', Theme.DARK);
+    } else {
+      setTheme(Theme.LIGHT);
+      localStorage.setItem('theme', Theme.LIGHT);
     }
-    
-    return (
-        <Button size={ButtonSize.MEDIUM} type={ButtonType.PRIMARY} onClick={handleChangeTheme} additionalClasses={themeSwitcherStyle.themeSwitcherBtn}>
-            <Svg width='24' height='24' viewBox='0 0 24 24' path={icons.themeIcon} additionalClasses={SvgColors.BLACK} stroke={themeIconStrokeColor} strokeWidth='1.5' strokeLinecap={SvgStrokeLineCap.ROUND} strokeLinejoin={SvgStrokeLineJoin.ROUND} />
-            <span>{currentTheme}</span>
-        </Button>
-    )
+  };
+
+  return (
+    <Button
+      size={ButtonSize.MEDIUM}
+      type={ButtonType.PRIMARY}
+      onClick={handleChangeTheme}
+      additionalClasses={themeSwitcherStyle.themeSwitcherBtn}
+    >
+      <Svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        path={icons.themeIcon}
+        additionalClasses={SvgColors.BLACK}
+        stroke={themeIconStrokeColor}
+        strokeWidth="1.5"
+        strokeLinecap={SvgStrokeLineCap.ROUND}
+        strokeLinejoin={SvgStrokeLineJoin.ROUND}
+      />
+      <span>{currentTheme}</span>
+    </Button>
+  );
 }

@@ -7,7 +7,7 @@ function useOptionsHook(onOptionChange: (option: Option) => void) {
     (option: Option) => {
       onOptionChange(option);
     },
-    [onOptionChange],
+    [onOptionChange]
   );
 
   const optionsVariant = {

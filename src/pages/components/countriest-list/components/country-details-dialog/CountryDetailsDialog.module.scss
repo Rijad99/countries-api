@@ -1,38 +1,36 @@
 @import '../../../../../styling/variables.scss';
 
-
-
 .countryDetailsDialog {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    height: calc(100vh - 80px);
-    padding: 5rem;
-    z-index: 10;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  height: calc(100vh - 80px);
+  padding: 5rem;
+  z-index: 10;
 }
 
 .closeCountryDetailsDialogButton {
-    box-shadow: 0 0 10px rgba($black, 0.075);
+  box-shadow: 0 0 10px rgba($black, 0.075);
 }
 
 .light {
-    background-color: $white;
+  background-color: $white;
 }
 
 .lightBg {
-    background-color: $white;
+  background-color: $white;
 }
 
 .dark {
-    background-color: $veryLightBlue;
+  background-color: $veryLightBlue;
 }
 
 .darkBg {
-    background-color: $darkBlue;
+  background-color: $darkBlue;
 }
 
 .arrowIcon {
-    transform: rotate(-90deg);
-    margin-right: 0.5rem;
+  transform: rotate(-90deg);
+  margin-right: 0.5rem;
 }

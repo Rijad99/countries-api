@@ -14,8 +14,6 @@ import { useCountryDetailsLoader } from './components/country-details-dialog/use
 import { Country } from '../../../services/countries-response-types/CountriesResponseTypes.ts';
 import { CountriesSkeletonLoader } from './CountriesSkeletonLoader.tsx';
 
-
-
 export interface CountriesListProps {
   countries: Country[];
   countriesError: Error | null;
@@ -23,29 +21,49 @@ export interface CountriesListProps {
 }
 
 export function CountriesList({ countries, countriesError, isFetchingCountries }: CountriesListProps) {
-    const [isCountryDetailsDialogOpen, setIsCountryDetailsDialogOpen] = useState<boolean>(false);
-    const { data, error, isFetching, refetchCountryDetails } = useCountryDetailsLoader();
+  const [isCountryDetailsDialogOpen, setIsCountryDetailsDialogOpen] = useState<boolean>(false);
+  const { data, error, isFetching, refetchCountryDetails } = useCountryDetailsLoader();
 
-    const handleOpenCountryDetailsDialog = (country: string) => {
-        setIsCountryDetailsDialogOpen(true);
-        refetchCountryDetails(country);
-    }
+  const handleOpenCountryDetailsDialog = (country: string) => {
+    setIsCountryDetailsDialogOpen(true);
+    refetchCountryDetails(country);
+  };
 
-    const handleCloseCountryDetailsDialog = () => {
-        setIsCountryDetailsDialogOpen(false);
-    }
+  const handleCloseCountryDetailsDialog = () => {
+    setIsCountryDetailsDialogOpen(false);
+  };
 
-    const renderCountriesError = countriesError && <div>Error Component Placeholder</div>;
-    const renderCountriesSkeletonLoader = isFetchingCountries && <CountriesSkeletonLoader />;
-    const renderCountries = (!isFetchingCountries && countries) && countries.map((country, index) => <CountryCard key={index} flag={country.flags.png} name={country.name.common} population={country.population} region={country.region} capital={country.capital} handleOpenCountryDetailsDialog={handleOpenCountryDetailsDialog} />)
-    const renderCountryDetailsDialog = isCountryDetailsDialogOpen && <CountryDetailsDialog country={data} error={error} isFetchingCountryDetails={isFetching} handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog} />
+  const renderCountriesError = countriesError && <div>Error Component Placeholder</div>;
+  const renderCountriesSkeletonLoader = isFetchingCountries && <CountriesSkeletonLoader />;
+  const renderCountries =
+    !isFetchingCountries &&
+    countries &&
+    countries.map((country, index) => (
+      <CountryCard
+        key={index}
+        flag={country.flags.png}
+        name={country.name.common}
+        population={country.population}
+        region={country.region}
+        capital={country.capital}
+        handleOpenCountryDetailsDialog={handleOpenCountryDetailsDialog}
+      />
+    ));
+  const renderCountryDetailsDialog = isCountryDetailsDialogOpen && (
+    <CountryDetailsDialog
+      country={data}
+      error={error}
+      isFetchingCountryDetails={isFetching}
+      handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog}
+    />
+  );
 
-    return (
-        <div className={`${countriesStyle.countriesList} ${countriesListStyle.countries}`}>
-            {renderCountriesSkeletonLoader}
-            {renderCountries}
-            {renderCountriesError}
-            {renderCountryDetailsDialog}
-        </div>
-    )
+  return (
+    <div className={`${countriesStyle.countriesList} ${countriesListStyle.countries}`}>
+      {renderCountriesSkeletonLoader}
+      {renderCountries}
+      {renderCountriesError}
+      {renderCountryDetailsDialog}
+    </div>
+  );
 }

@@ -5,8 +5,6 @@ import countryContentStyle from './components/country-content/CountryContent.mod
 // Components
 import { SkeletonLoaderCircular } from '../../../components/skeleton-loading/SkeletonLoading.tsx';
 
-
-
 export function CountriesSkeletonLoader() {
   return (
     <div className={`${countryCardStyle.countryCard}`}>
@@ -20,5 +18,5 @@ export function CountriesSkeletonLoader() {
         </div>
       </div>
     </div>
-  )
+  );
 }
