@@ -7,3 +7,10 @@
 .name {
   font-weight: $boldest;
 }
+
+.countryBaseInfo {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
