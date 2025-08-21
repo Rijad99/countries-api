@@ -7,7 +7,6 @@ import { Country } from '../pages/countries/countries-types/CountriesTypes.ts';
 // Service
 import { CountriesService } from '../pages/countries/CountriesService.ts';
 
-
 interface CountriesContextProps {
   countries: Country[] | null;
   setCountries: (countries: Country[]) => void;

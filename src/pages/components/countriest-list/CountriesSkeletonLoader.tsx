@@ -14,7 +14,7 @@ export function CountriesSkeletonLoader() {
         return <CountrySkeleton key={`country-${index}`} />;
       })}
     </>
-  )
+  );
 }
 
 function CountrySkeleton() {
