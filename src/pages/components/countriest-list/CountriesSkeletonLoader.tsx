@@ -6,6 +6,18 @@ import countryContentStyle from './components/country-content/CountryContent.mod
 import { SkeletonLoaderCircular } from '../../../components/skeleton-loading/SkeletonLoading.tsx';
 
 export function CountriesSkeletonLoader() {
+  const numberOfCountrySkeletons = Array.from({ length: 100 }, (_, i) => i);
+
+  return (
+    <>
+      {numberOfCountrySkeletons.map((index) => {
+        return <CountrySkeleton key={`country-${index}`} />;
+      })}
+    </>
+  )
+}
+
+function CountrySkeleton() {
   return (
     <div className={`${countryCardStyle.countryCard}`}>
       <SkeletonLoaderCircular width={200} height={125} />
