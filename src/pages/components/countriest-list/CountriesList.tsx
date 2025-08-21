@@ -11,11 +11,11 @@ import CountryDetailsDialog from './components/country-details-dialog/CountryDet
 
 // Contexts
 import { useCountryDetailsLoader } from './components/country-details-dialog/useCountryDetailsLoader';
-import { Country } from '../../../services/countries-response-types/CountriesResponseTypes.ts';
+import { Country } from '../../countries/countries-types/CountriesTypes.ts';
 import { CountriesSkeletonLoader } from './CountriesSkeletonLoader.tsx';
 
 export interface CountriesListProps {
-  countries: Country[];
+  countries: Country[] | undefined;
   countriesError: Error | null;
   isFetchingCountries: boolean;
 }

@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { getCountryByName } from '../../../../../services/CountriesService';
+import { CountriesService } from '../../../../countries/CountriesService.ts';
 
 export const useCountryDetailsLoader = () => {
   const queryClient = useQueryClient();
@@ -13,17 +13,17 @@ export const useCountryDetailsLoader = () => {
         throw new Error('Country has to be provided!');
       }
 
-      return await getCountryByName(country).then((data) => data[0]);
+      return await CountriesService.getCountryByName(country).then((data) => data[0]);
     },
     enabled: false,
     refetchOnWindowFocus: false,
     retry: false,
   });
 
-  const refetchCountryDetails = async (country: string) => {
+  const refetchCountryDetails = (country: string) => {
     queryClient.setQueryData(['selected-country'], country);
 
-    countryDetailsResult.refetch();
+    void countryDetailsResult.refetch();
   };
 
   return {

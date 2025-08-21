@@ -32,7 +32,7 @@ function SelectedOption({
     onSelectOpen();
   }, [onSelectOpen]);
 
-  const renderIcon = selectedOption?.icon && <img src={selectedOption.icon} />;
+  const renderIcon = selectedOption?.icon && <img src={selectedOption.icon} alt={selectedOption.icon} />;
   const renderValue = selectedOption?.value ? selectedOption.value : placeholder;
 
   const arrowIconThemeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;

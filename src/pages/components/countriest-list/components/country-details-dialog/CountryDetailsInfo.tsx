@@ -5,7 +5,7 @@ import countryDetailsInfoStyle from './CountryDetailsInfo.module.scss';
 import { Label, LabelType } from '../../../../../components/label/Label';
 
 // Types
-import { Country } from '../../../../../services/countries-response-types/CountriesResponseTypes';
+import { Country } from '../../../../countries/countries-types/CountriesTypes.ts';
 
 export interface CountryDetailsInfoProps {
   country: Country | undefined;

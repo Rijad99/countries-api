@@ -6,7 +6,7 @@ import { Category } from '../../../../../components/category/Category';
 import { Label } from '../../../../../components/label/Label';
 
 // Types
-import { Country } from '../../../../../services/countries-response-types/CountriesResponseTypes';
+import { Country } from '../../../../countries/countries-types/CountriesTypes.ts';
 
 export interface CountryDetailsBordersProps {
   country: Country | undefined;

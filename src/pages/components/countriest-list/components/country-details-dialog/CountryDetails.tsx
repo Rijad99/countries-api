@@ -9,7 +9,7 @@ import { CountryDetailsBorders } from './CountryDetailsBorders';
 import { SkeletonLoaderCircular, SkeletonLoading } from '../../../../../components/skeleton-loading/SkeletonLoading';
 
 // Response Types
-import { Country } from '../../../../../services/countries-response-types/CountriesResponseTypes';
+import { Country } from '../../../../countries/countries-types/CountriesTypes.ts';
 
 export interface CountryDetailsProps {
   country: Country | undefined;
@@ -26,7 +26,7 @@ export function CountryDetails({ country, isFetchingCountryDetails }: CountryDet
     return (
       <div className={countryDetailsStyle.countryDetailsContainer}>
         <div className={countryDetailsStyle.leftPartCountryInfo}>
-          <img src={country?.flags.png} className={countryDetailsStyle.flag} />
+          <img src={country?.flags.png} alt={country.name.common} className={countryDetailsStyle.flag} />
         </div>
         <div className={countryDetailsStyle.rightPartCountryInfo}>
           <h1>{country?.name.common}</h1>

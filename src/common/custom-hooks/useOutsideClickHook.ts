@@ -16,7 +16,7 @@ function useOutsideClickHook(ref: RefObject<HTMLElement>, refSetStateCallback: D
     return () => {
       document.removeEventListener('click', handleClickOutside, true);
     };
-  }, []);
+  }, [ref, refSetStateCallback]);
 }
 
 export default useOutsideClickHook;

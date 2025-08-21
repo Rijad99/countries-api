@@ -1,11 +1,12 @@
 // React
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, ReactNode, FC } from 'react';
 
-// Response types
-import { Country } from '../services/countries-response-types/CountriesResponseTypes';
+// Response countries-types
+import { Country } from '../pages/countries/countries-types/CountriesTypes.ts';
 
 // Service
-import { getAllCountries } from '../services/CountriesService';
+import { CountriesService } from '../pages/countries/CountriesService.ts';
+
 
 interface CountriesContextProps {
   countries: Country[] | null;
@@ -18,14 +19,14 @@ const CountriesContext = createContext<CountriesContextProps>({
 });
 
 interface CountriesProviderProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
-const CountriesProvider: React.FC<CountriesProviderProps> = ({ children }) => {
+const CountriesProvider: FC<CountriesProviderProps> = ({ children }) => {
   const [countries, setCountries] = useState<Country[] | null>(null);
 
   useEffect(() => {
-    getAllCountries()
+    CountriesService.getAllCountries()
       .then((data) => setCountries(data))
       .catch((error) => console.log(error));
   }, []);

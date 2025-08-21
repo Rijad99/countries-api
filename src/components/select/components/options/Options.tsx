@@ -36,7 +36,6 @@ function Options(props: OptionsProps) {
       initial={{
         opacity: 0,
         transform: 'translateY(-20px)',
-        pointerEvents: 'none',
       }}
       animate={animateSelect}
     >

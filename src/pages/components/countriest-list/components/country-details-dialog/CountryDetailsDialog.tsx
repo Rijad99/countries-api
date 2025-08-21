@@ -11,7 +11,7 @@ import Svg from '../../../../../components/svg/Svg';
 import { ButtonSize, ButtonType } from '../../../../../components/button/Button.types';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
 import { Theme } from '../../../navigation/components/theme-switcher/ThemeSwitcher';
-import { Country } from '../../../../../services/countries-response-types/CountriesResponseTypes';
+import { Country } from '../../../../countries/countries-types/CountriesTypes.ts';
 
 // Styles
 import countryDetailsDialogStyle from './CountryDetailsDialog.module.scss';

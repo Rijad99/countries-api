@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
-import { getAllCountries } from '../../../../../services/CountriesService.ts';
+import { CountriesService } from '../../../../countries/CountriesService.ts';
 
 export const useCountriesLoader = () => {
   const countriesResult = useQuery({
     queryKey: ['countries'],
-    queryFn: async () => getAllCountries().then((countries) => countries),
+    queryFn: async () => CountriesService.getAllCountries().then((countries) => countries),
     refetchOnWindowFocus: false,
     retry: false,
   });

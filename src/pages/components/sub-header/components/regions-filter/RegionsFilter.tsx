@@ -11,7 +11,7 @@ import { Option } from '../../../../../components/select/components/options/Opti
 import regionsFilterSelectStyle from './RegionsFilter.module.scss';
 
 // Services
-import { getCountriesByRegion } from '../../../../../services/CountriesService';
+import { CountriesService } from '../../../../countries/CountriesService.ts';
 
 // Contexts
 import { CountriesContext } from '../../../../../context/CountriesContext';
@@ -47,7 +47,7 @@ export function RegionsFilter() {
   const handleCountriesUpdateByRegion = (option: Option) => {
     setSelectedRegion(option);
 
-    getCountriesByRegion(option.value.toLowerCase())
+    CountriesService.getCountriesByRegion(option.value.toLowerCase())
       .then((data) => {
         setCountries(data);
       })
