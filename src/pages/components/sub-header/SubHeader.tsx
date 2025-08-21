@@ -4,7 +4,7 @@ import subHeaderStyle from './SubHeader.module.scss';
 
 // Components
 import { RegionsFilter } from './components/regions-filter/RegionsFilter';
-import { SearchInput } from './components/regions-filter/search-input/SearchInput';
+import { SearchInput } from './components/search-input/SearchInput';
 
 export function SubHeader() {
   return (

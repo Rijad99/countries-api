@@ -1,8 +1,8 @@
 // Components
-import { Input } from '../../../../../../components/input/Input';
+import { Input } from '../../../../../components/input/Input.tsx';
 
 // Icons
-import { icons } from '../../../../../../common/icons/icons';
+import { icons } from '../../../../../common/icons/icons.ts';
 
 // Styles
 import searchInputStyle from './SearchInput.module.scss';
