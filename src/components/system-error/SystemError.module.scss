@@ -1,6 +1,6 @@
 @import '../../styling/variables.scss';
 
-.notification {
+.systemError {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -18,21 +18,25 @@
   font-size: 0.8rem;
 }
 
-.notificationContainer {
+.systemErrorContainer {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
 }
 
-.notificationInfo {
+.systemErrorInfo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.closeNotificationButton {
+.systemErrorDetailsButton {
   background-color: transparent;
   border-radius: 50%;
+
+  svg {
+    transform: rotate(180deg);
+  }
 
   &:hover {
     svg {
