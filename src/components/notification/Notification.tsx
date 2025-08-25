@@ -33,8 +33,20 @@ export function Notification({ id, label, type, onCloseNotification }: Notificat
   const notification = mapTypeToNotification(type);
 
   const renderCloseNotificationButton = onCloseNotification ? (
-    <Button size={ButtonSize.SMALL} type={ButtonType.PRIMARY} onClick={onCloseNotification}>
-      Close
+    <Button
+      size={ButtonSize.SMALLEST}
+      type={ButtonType.PRIMARY}
+      additionalClasses={notificationStyle.closeNotificationButton}
+      onClick={onCloseNotification}
+    >
+      <Svg
+        path={icons.closeIcon}
+        strokeWidth={'2'}
+        width="21"
+        height="19"
+        viewBox="0 -0.5 24 24"
+        stroke={SvgColors.GRAY}
+      />
     </Button>
   ) : null;
 

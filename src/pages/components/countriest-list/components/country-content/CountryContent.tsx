@@ -12,11 +12,13 @@ export interface CountryContentProps {
 }
 
 export function CountryContent({ name, population, region, capital }: CountryContentProps) {
+  const formattedPopulation = population.toLocaleString();
+
   return (
     <div className={countryContentStyle.countryContent}>
       <span className={countryContentStyle.name}>{name}</span>
       <div className={countryContentStyle.countryBaseInfo}>
-        <Label title="Population" value={population} />
+        <Label title="Population" value={formattedPopulation} />
         <Label title="Region" value={region} />
         <Label title="Capital" value={capital} />
       </div>

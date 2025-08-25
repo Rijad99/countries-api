@@ -1,6 +1,7 @@
 @import '../../styling/variables.scss';
 
-.svg {
+.svg,
+path {
   transition: all 300ms ease;
 
   .black {

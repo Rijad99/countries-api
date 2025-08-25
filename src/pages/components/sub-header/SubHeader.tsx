@@ -11,7 +11,12 @@ export function SubHeader() {
   return (
     <div className={`${countriesStyle.subHeader} ${subHeaderStyle.subHeader}`}>
       <SearchInput />
-      <Notification id={''} label={'Unsuccessful notification description'} type={NotificationType.ERROR} onCloseNotification={() => null} />
+      <Notification
+        id={''}
+        label={'Unsuccessful notification description'}
+        type={NotificationType.ERROR}
+        onCloseNotification={() => null}
+      />
       <RegionsFilter />
     </div>
   );

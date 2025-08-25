@@ -19,11 +19,13 @@ export function CountryDetailsInfo({ country }: CountryDetailsInfoProps) {
       .join(', ');
   const languages = country && Object.values(country.languages).join(', ');
 
+  const formattedPopulation = country?.population.toLocaleString();
+
   return (
     <div className={countryDetailsInfoStyle.countryDetails}>
       <div className={countryDetailsInfoStyle.countryDetailsInfo}>
         <Label title="Native Name" value={country?.name.common} type={LabelType.LARGE} />
-        <Label title="Population" value={country?.population} type={LabelType.LARGE} />
+        <Label title="Population" value={formattedPopulation} type={LabelType.LARGE} />
         <Label title="Region" value={country?.region} type={LabelType.LARGE} />
         <Label title="Sub Region" value={country?.subregion} type={LabelType.LARGE} />
         <Label title="Capital" value={country?.capital} type={LabelType.LARGE} />
