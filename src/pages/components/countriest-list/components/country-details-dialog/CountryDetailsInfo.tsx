@@ -13,13 +13,14 @@ export interface CountryDetailsInfoProps {
 
 export function CountryDetailsInfo({ country }: CountryDetailsInfoProps) {
   const currencies =
-    country &&
-    Object.values(country.currencies)
-      .map((currency) => `${currency.name} (${currency.symbol})`)
-      .join(', ');
+    country && country.currencies
+      ? Object.values(country.currencies)
+          .map((currency) => `${currency.name} (${currency.symbol})`)
+          .join(', ')
+      : 'Unknown';
   const languages = country && Object.values(country.languages).join(', ');
 
-  const formattedPopulation = country?.population.toLocaleString();
+  const formattedPopulation = country?.population ? country.population.toLocaleString() : 'Unknown';
 
   return (
     <div className={countryDetailsInfoStyle.countryDetails}>
@@ -27,8 +28,8 @@ export function CountryDetailsInfo({ country }: CountryDetailsInfoProps) {
         <Label title="Native Name" value={country?.name.common} type={LabelType.LARGE} />
         <Label title="Population" value={formattedPopulation} type={LabelType.LARGE} />
         <Label title="Region" value={country?.region} type={LabelType.LARGE} />
-        <Label title="Sub Region" value={country?.subregion} type={LabelType.LARGE} />
-        <Label title="Capital" value={country?.capital} type={LabelType.LARGE} />
+        <Label title="Sub Region" value={country?.subregion ?? 'Unknown'} type={LabelType.LARGE} />
+        <Label title="Capital" value={country?.capital ?? 'Unknown'} type={LabelType.LARGE} />
       </div>
       <div className={countryDetailsInfoStyle.countryDetailsInfo}>
         <Label title="Top Level Domain" value={country?.tld.join(' ')} type={LabelType.LARGE} />

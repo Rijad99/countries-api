@@ -1,3 +1,6 @@
+// React
+import { QueryObserverResult } from '@tanstack/react-query';
+
 // Styles
 import systemErrorStyles from './SystemError.module.scss';
 
@@ -6,22 +9,20 @@ import { icons } from '../../common/icons/icons.ts';
 
 // Components
 import Svg from '../svg/Svg.tsx';
-import Button from '../button/Button.tsx';
+import { TryAgainButton } from '../try-again-button/TryAgainButton.tsx';
 
 // Types
-import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../svg/Svg.types.ts';
-import { ButtonSize, ButtonType } from '../button/Button.types.ts';
-import { QueryObserverResult } from '@tanstack/react-query';
+import { SvgColors } from '../svg/Svg.types.ts';
 
-interface SystemErrorProps {
+interface SystemErrorProps<TData> {
   id: string;
-  title: string,
+  title: string;
   label: string;
   error: Error;
-  onRefetchData: () => Promise<QueryObserverResult<QueryObserverResult, Error>>;
+  onRefetchData: () => Promise<QueryObserverResult<TData, Error>>;
 }
 
-export function SystemError({ id, title, label, error, onRefetchData }: SystemErrorProps) {
+export function SystemError<TData>({ id, title, label, error, onRefetchData }: SystemErrorProps<TData>) {
   return (
     <div id={id} className={`${systemErrorStyles.systemError}`}>
       <div className={systemErrorStyles.systemErrorDetails}>
@@ -39,36 +40,10 @@ export function SystemError({ id, title, label, error, onRefetchData }: SystemEr
             <span className={systemErrorStyles.label}>{label}</span>
           </div>
         </div>
-        <TryAgainButton onRefetchData={onRefetchData} />
+        <TryAgainButton<TData> onRefetchData={onRefetchData} />
       </div>
       <SystemErrorDetailsDescription error={error} />
     </div>
-  );
-}
-
-interface TryAgainButtonProps {
-  onRefetchData: () => Promise<QueryObserverResult<QueryObserverResult, Error>>;
-}
-
-function TryAgainButton({ onRefetchData }: TryAgainButtonProps) {
-  return (
-    <Button
-      size={ButtonSize.MEDIUM}
-      type={ButtonType.PRIMARY}
-      additionalClasses={systemErrorStyles.systemErrorDetailsButton}
-      onClick={onRefetchData}>
-      <Svg
-        path={icons.refreshIcon}
-        strokeWidth={'2'}
-        width="28"
-        height="16"
-        viewBox="10 0 22 22"
-        stroke={SvgColors.GRAY}
-        strokeLinejoin={SvgStrokeLineJoin.ROUND}
-        strokeLinecap={SvgStrokeLineCap.ROUND}
-      />
-      Try Again
-    </Button>
   );
 }
 

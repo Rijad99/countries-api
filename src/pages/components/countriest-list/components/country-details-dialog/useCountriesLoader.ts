@@ -12,5 +12,6 @@ export const useCountriesLoader = () => {
   return {
     ...countriesResult,
     countries: countriesResult.data,
+    refetchCountriesData: countriesResult.refetch,
   };
 };

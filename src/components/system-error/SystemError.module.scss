@@ -36,21 +36,6 @@
   gap: 0.5rem;
 }
 
-.systemErrorDetailsButton {
-  background-color: transparent;
-  border-radius: 50%;
-  font-size: 0.75rem;
-  font-weight: $medium;
-
-  &:hover {
-    svg {
-      path {
-        stroke: $white;
-      }
-    }
-  }
-}
-
 .systemErrorDetailsDescription {
   font-size: 0.75rem;
 }

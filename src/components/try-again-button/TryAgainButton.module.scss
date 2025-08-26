@@ -1,0 +1,16 @@
+@import '../../styling/variables.scss';
+
+.tryAgainButton {
+  background-color: transparent;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: $bold;
+
+  &:hover {
+    svg {
+      path {
+        stroke: $white;
+      }
+    }
+  }
+}
