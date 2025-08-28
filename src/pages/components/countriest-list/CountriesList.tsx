@@ -48,6 +48,7 @@ export function CountriesList({
         id={'countries-no-data'}
         title={'No Data'}
         label={'There is currently no Countries data do be shown'}
+        isLoading={isFetchingCountries}
         onRefetchData={refetchCountriesData}
       />
     ) : null;
@@ -57,6 +58,7 @@ export function CountriesList({
       title={'Countries failed to load'}
       label={'System Error occurred while trying to fetch Countries data'}
       error={countriesError}
+      isLoading={isFetchingCountries}
       onRefetchData={refetchCountriesData}
     />
   ) : null;

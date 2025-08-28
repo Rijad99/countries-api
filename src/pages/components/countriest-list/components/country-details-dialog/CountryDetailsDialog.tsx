@@ -8,7 +8,7 @@ import { CountryDetails } from './CountryDetails';
 import Svg from '../../../../../components/svg/Svg';
 
 // Types
-import { ButtonSize, ButtonType } from '../../../../../components/button/Button.tsx';
+import { ButtonSize } from '../../../../../components/button/Button.tsx';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
 import { Theme } from '../../../navigation/components/theme-switcher/ThemeSwitcher';
 import { Country } from '../../../../countries/countries-types/CountriesTypes.ts';
@@ -43,7 +43,6 @@ function CountryDetailsDialog({
     <Dialog classes={`${countryDetailsDialogStyle.countryDetailsDialog} ${countryDetailsDialogStyle[`${theme}Bg`]}`}>
       <Button
         size={ButtonSize.MEDIUM}
-        type={ButtonType.TRANSPARENT}
         onClick={handleCloseCountryDetailsDialog}
       >
         <Svg

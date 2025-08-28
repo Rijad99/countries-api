@@ -9,7 +9,7 @@ import Button from '../../../../../components/button/Button';
 import Svg from '../../../../../components/svg/Svg';
 
 // Types
-import { ButtonSize, ButtonType } from '../../../../../components/button/Button.tsx';
+import { ButtonSize } from '../../../../../components/button/Button.tsx';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
 
 // Contexts
@@ -39,7 +39,6 @@ export function ThemeSwitcher() {
   return (
     <Button
       size={ButtonSize.MEDIUM}
-      type={ButtonType.DARK}
       onClick={handleChangeTheme}
     >
       <Svg

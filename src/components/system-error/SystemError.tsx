@@ -19,10 +19,11 @@ interface SystemErrorProps<TData> {
   title: string;
   label: string;
   error: Error;
+  isLoading: boolean;
   onRefetchData: () => Promise<QueryObserverResult<TData, Error>>;
 }
 
-export function SystemError<TData>({ id, title, label, error, onRefetchData }: SystemErrorProps<TData>) {
+export function SystemError<TData>({ id, title, label, error, isLoading, onRefetchData }: SystemErrorProps<TData>) {
   return (
     <div id={id} className={`${systemErrorStyles.systemError}`}>
       <div className={systemErrorStyles.systemErrorDetails}>
@@ -40,7 +41,7 @@ export function SystemError<TData>({ id, title, label, error, onRefetchData }: S
             <span className={systemErrorStyles.label}>{label}</span>
           </div>
         </div>
-        <TryAgainButton<TData> onRefetchData={onRefetchData} />
+        <TryAgainButton<TData> isLoading={isLoading} onRefetchData={onRefetchData} />
       </div>
       <SystemErrorDetailsDescription error={error} />
     </div>

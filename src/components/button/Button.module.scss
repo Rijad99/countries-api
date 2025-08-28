@@ -11,8 +11,28 @@
   cursor: pointer;
 }
 
-.SMALL {
+.loading {
+  animation: rotate-icon 500ms linear infinite;
+}
 
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+@keyframes rotate-icon {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.SMALL {
+  padding: 0.5rem;
 }
 
 .MEDIUM {
@@ -29,7 +49,18 @@
 }
 
 .LIGHT {
+  background-color: $white;
+  box-shadow: 0 0 10px rgba($black, 0.075);
 
+  &:hover {
+
+    svg {
+
+      path {
+        stroke: $darkBlue;
+      }
+    }
+  }
 }
 
 .DARK {

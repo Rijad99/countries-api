@@ -13,7 +13,7 @@ import Svg from '../svg/Svg.tsx';
 
 // Types
 import { SvgColors } from '../svg/Svg.types.ts';
-import { ButtonSize, ButtonType } from '../button/Button.tsx';
+import { ButtonSize } from '../button/Button.tsx';
 
 export enum NotificationType {
   SUCCESS = 'SUCCESS',
@@ -35,7 +35,6 @@ export function Notification({ id, label, type, onCloseNotification }: Notificat
   const renderCloseNotificationButton = onCloseNotification ? (
     <Button
       size={ButtonSize.SMALL}
-      type={ButtonType.DARK}
       onClick={onCloseNotification}
     >
       <Svg

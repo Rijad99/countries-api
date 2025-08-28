@@ -1,15 +1,18 @@
 // React
-import { PropsWithChildren } from 'react';
+import { PropsWithChildren, useContext } from 'react';
 
 // CSS
-import buttonCSS from './Button.module.scss';
+import buttonStyle from './Button.module.scss';
 
 // Button hook
 import useButtonHook from './useButtonHook';
+import { ThemeContext } from '../../context/ThemeContext.tsx';
+import { Theme } from '../../pages/components/navigation/components/theme-switcher/ThemeSwitcher.tsx';
 
 export interface ButtonProps {
   size: ButtonSize;
-  type: ButtonType;
+  isDisabled?: boolean;
+  isLoading?: boolean;
   onClick: () => void;
 }
 
@@ -19,25 +22,20 @@ export enum ButtonSize {
   LARGE = 'LARGE',
 }
 
-export enum ButtonType {
-  TRANSPARENT = 'TRANSPARENT',
-  LIGHT = 'LIGHT',
-  DARK = 'DARK',
-}
-
-export enum ButtonState {
-  DISABLED ='DISABLED',
-  FETCHING = 'FETCHING',
-}
-
 function Button(props: PropsWithChildren<ButtonProps>) {
+  const { theme } = useContext(ThemeContext);
+
   const { getButtonCSS } = useButtonHook();
 
-  const buttonStyle = getButtonCSS(props.size, props.type);
+  const buttonCSS = getButtonCSS(props.size);
+  const isLoadingCSS = props.isLoading && buttonStyle.loading;
+  const isDisabledCSS = props.isDisabled && buttonStyle.disabled;
+
+  const themeButtonCSS = theme === Theme.DARK ? buttonStyle.DARK : buttonStyle.LIGHT;
 
   return (
     <button
-      className={`${buttonCSS.button} ${buttonStyle}`}
+      className={`${themeButtonCSS} ${buttonStyle.button} ${buttonCSS} ${isLoadingCSS} ${isDisabledCSS}`}
       onClick={props.onClick}
     >
       {props.children}
