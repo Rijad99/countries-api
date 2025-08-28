@@ -1,5 +1,5 @@
 // ENUMS
-import { ButtonSize, ButtonType } from './Button.types';
+import { ButtonSize, ButtonType } from './Button.tsx';
 
 // CSS
 import buttonCSS from './Button.module.scss';
@@ -11,30 +11,26 @@ function useButtonHook() {
     let buttonType = '';
 
     switch (size) {
-      case 'smallest':
-        buttonSize = ButtonSize.SMALLEST;
-        break;
-
-      case 'small':
+      case 'SMALL':
         buttonSize = ButtonSize.SMALL;
         break;
-
-      case 'medium':
+      case 'MEDIUM':
         buttonSize = ButtonSize.MEDIUM;
         break;
-
-      case 'large':
+      case 'LARGE':
         buttonSize = ButtonSize.LARGE;
         break;
     }
 
     switch (type) {
-      case 'primary':
-        buttonType = ButtonType.PRIMARY;
+      case 'TRANSPARENT':
+        buttonType = ButtonType.TRANSPARENT;
         break;
-
-      case 'disabled':
-        buttonType = ButtonType.DISABLED;
+      case 'LIGHT':
+        buttonType = ButtonType.LIGHT;
+        break;
+      case 'DARK':
+        buttonType = ButtonType.DARK;
         break;
     }
 

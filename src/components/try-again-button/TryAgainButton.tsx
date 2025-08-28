@@ -6,11 +6,8 @@ import Button from '../button/Button.tsx';
 import Svg from '../svg/Svg.tsx';
 
 // Types
-import { ButtonSize, ButtonType } from '../button/Button.types.ts';
+import { ButtonSize, ButtonType } from '../button/Button.tsx';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../svg/Svg.types.ts';
-
-// Styles
-import tryAgainButtonStyles from './TryAgainButton.module.scss';
 
 // Icons
 import { icons } from '../../common/icons/icons.ts';
@@ -23,8 +20,7 @@ export function TryAgainButton<TData>({ onRefetchData }: TryAgainButtonProps<TDa
   return (
     <Button
       size={ButtonSize.MEDIUM}
-      type={ButtonType.PRIMARY}
-      additionalClasses={tryAgainButtonStyles.tryAgainButton}
+      type={ButtonType.DARK}
       onClick={onRefetchData}
     >
       <Svg
@@ -32,7 +28,7 @@ export function TryAgainButton<TData>({ onRefetchData }: TryAgainButtonProps<TDa
         strokeWidth={'2'}
         width="28"
         height="16"
-        viewBox="10 0 22 22"
+        viewBox="0 0 22 22"
         stroke={SvgColors.GRAY}
         strokeLinejoin={SvgStrokeLineJoin.ROUND}
         strokeLinecap={SvgStrokeLineCap.ROUND}

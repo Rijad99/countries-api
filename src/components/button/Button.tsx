@@ -4,11 +4,31 @@ import { PropsWithChildren } from 'react';
 // CSS
 import buttonCSS from './Button.module.scss';
 
-// Types
-import { ButtonProps } from './Button.types';
-
 // Button hook
 import useButtonHook from './useButtonHook';
+
+export interface ButtonProps {
+  size: ButtonSize;
+  type: ButtonType;
+  onClick: () => void;
+}
+
+export enum ButtonSize {
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
+}
+
+export enum ButtonType {
+  TRANSPARENT = 'TRANSPARENT',
+  LIGHT = 'LIGHT',
+  DARK = 'DARK',
+}
+
+export enum ButtonState {
+  DISABLED ='DISABLED',
+  FETCHING = 'FETCHING',
+}
 
 function Button(props: PropsWithChildren<ButtonProps>) {
   const { getButtonCSS } = useButtonHook();
@@ -17,7 +37,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
 
   return (
     <button
-      className={`${buttonCSS.button} ${buttonStyle} ${props?.additionalClasses && props.additionalClasses}`}
+      className={`${buttonCSS.button} ${buttonStyle}`}
       onClick={props.onClick}
     >
       {props.children}

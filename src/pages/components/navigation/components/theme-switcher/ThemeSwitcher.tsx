@@ -9,11 +9,8 @@ import Button from '../../../../../components/button/Button';
 import Svg from '../../../../../components/svg/Svg';
 
 // Types
-import { ButtonSize, ButtonType } from '../../../../../components/button/Button.types';
+import { ButtonSize, ButtonType } from '../../../../../components/button/Button.tsx';
 import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../../../components/svg/Svg.types';
-
-// Styles
-import themeSwitcherStyle from './ThemeSwitcher.module.scss';
 
 // Contexts
 import { ThemeContext } from '../../../../../context/ThemeContext';
@@ -42,9 +39,8 @@ export function ThemeSwitcher() {
   return (
     <Button
       size={ButtonSize.MEDIUM}
-      type={ButtonType.PRIMARY}
+      type={ButtonType.DARK}
       onClick={handleChangeTheme}
-      additionalClasses={themeSwitcherStyle.themeSwitcherBtn}
     >
       <Svg
         width="24"

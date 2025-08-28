@@ -4,30 +4,45 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   font-weight: $bold;
-  color: inherit;
   border: 1px solid transparent;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-.smallest {
-  padding: 0;
-  width: 35px;
-  height: 35px;
+.SMALL {
+
 }
 
-.small {
-  padding: 0.5rem 0.75rem;
-}
-
-.medium {
+.MEDIUM {
   padding: 0.75rem;
 }
 
-.large {
+.LARGE {
   padding: 1rem;
 }
 
-.primary {
-  cursor: pointer;
+.TRANSPARENT {
+  background-color: transparent;
+  color: $white;
+}
+
+.LIGHT {
+
+}
+
+.DARK {
+  background-color: $darkBlue;
+  color: $white;
+
+  &:hover {
+
+    svg {
+
+      path {
+        stroke: $white;
+      }
+    }
+  }
 }

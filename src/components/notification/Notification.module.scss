@@ -29,16 +29,3 @@
   align-items: center;
   gap: 0.5rem;
 }
-
-.closeNotificationButton {
-  background-color: transparent;
-  border-radius: 50%;
-
-  &:hover {
-    svg {
-      path {
-        stroke: $white;
-      }
-    }
-  }
-}
