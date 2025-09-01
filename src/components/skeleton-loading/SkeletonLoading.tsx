@@ -1,8 +1,11 @@
 // React
-import { ReactElement } from 'react';
+import { ReactElement, useContext } from 'react';
 
 // Styles
 import skeletonLoadingStyle from './SkeletonLoading.module.scss';
+
+// Contexts
+import { ThemeContext } from '../../context/ThemeContext.tsx';
 
 export interface SkeletonLoadingProps {
   children: ReactElement;
@@ -18,9 +21,11 @@ export interface SkeletonLoaderCircularProps {
 }
 
 export function SkeletonLoaderCircular({ width, height }: SkeletonLoaderCircularProps) {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <div
-      className={`${skeletonLoadingStyle.skeletonLoaderCircular} ${skeletonLoadingStyle.pulse}`}
+      className={`${skeletonLoadingStyle.skeletonLoaderCircular} ${skeletonLoadingStyle.pulse} ${skeletonLoadingStyle[theme]}`}
       style={{ width: `${width}px`, height: `${height}px` }}
     ></div>
   );

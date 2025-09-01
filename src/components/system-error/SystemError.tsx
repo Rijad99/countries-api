@@ -13,6 +13,8 @@ import { TryAgainButton } from '../try-again-button/TryAgainButton.tsx';
 
 // Types
 import { SvgColors } from '../svg/Svg.types.ts';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext.tsx';
 
 interface SystemErrorProps<TData> {
   id: string;
@@ -24,8 +26,10 @@ interface SystemErrorProps<TData> {
 }
 
 export function SystemError<TData>({ id, title, label, error, isLoading, onRefetchData }: SystemErrorProps<TData>) {
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div id={id} className={`${systemErrorStyles.systemError}`}>
+    <div id={id} className={`${systemErrorStyles.systemError} ${systemErrorStyles[theme]}`}>
       <div className={systemErrorStyles.systemErrorDetails}>
         <div className={systemErrorStyles.systemErrorContainer}>
           <h5 className={systemErrorStyles.title}>{title}</h5>

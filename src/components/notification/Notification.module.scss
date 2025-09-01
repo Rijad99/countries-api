@@ -5,9 +5,16 @@
   align-items: center;
   gap: 1rem;
   border-radius: 24px;
-  background-color: $darkBlue;
-  padding: 1rem 0 1rem 1rem;
+  padding: 1rem;
   box-shadow: 0 0 10px rgba($black, 0.075);
+}
+
+.light {
+  background-color: $white;
+}
+
+.dark {
+  background-color: $darkBlue;
 }
 
 .title {

@@ -1,5 +1,5 @@
 // React
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
 
 // Icons
 import { icons } from '../../common/icons/icons.ts';
@@ -14,6 +14,7 @@ import Svg from '../svg/Svg.tsx';
 // Types
 import { SvgColors } from '../svg/Svg.types.ts';
 import { ButtonSize } from '../button/Button.tsx';
+import { ThemeContext } from '../../context/ThemeContext.tsx';
 
 export enum NotificationType {
   SUCCESS = 'SUCCESS',
@@ -30,13 +31,12 @@ interface NotificationProps {
 }
 
 export function Notification({ id, label, type, onCloseNotification }: NotificationProps) {
+  const { theme } = useContext(ThemeContext);
+
   const notification = mapTypeToNotification(type);
 
   const renderCloseNotificationButton = onCloseNotification ? (
-    <Button
-      size={ButtonSize.SMALL}
-      onClick={onCloseNotification}
-    >
+    <Button size={ButtonSize.SMALL} onClick={onCloseNotification}>
       <Svg
         path={icons.closeIcon}
         strokeWidth={'2'}
@@ -49,7 +49,7 @@ export function Notification({ id, label, type, onCloseNotification }: Notificat
   ) : null;
 
   return (
-    <div id={id} className={`${notificationStyle.notification}`}>
+    <div id={id} className={`${notificationStyle.notification} ${notificationStyle[theme]}`}>
       <div className={notificationStyle.notificationContainer}>
         <h5 className={notificationStyle.title}>{notification.title}</h5>
         <div className={notificationStyle.notificationInfo}>

@@ -41,10 +41,7 @@ function CountryDetailsDialog({
 
   return (
     <Dialog classes={`${countryDetailsDialogStyle.countryDetailsDialog} ${countryDetailsDialogStyle[`${theme}Bg`]}`}>
-      <Button
-        size={ButtonSize.MEDIUM}
-        onClick={handleCloseCountryDetailsDialog}
-      >
+      <Button size={ButtonSize.MEDIUM} onClick={handleCloseCountryDetailsDialog}>
         <Svg
           width="8"
           height="6"

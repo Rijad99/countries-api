@@ -21,7 +21,6 @@
 }
 
 @keyframes rotate-icon {
-
   from {
     transform: rotate(0deg);
   }
@@ -32,7 +31,8 @@
 }
 
 .SMALL {
-  padding: 0.5rem;
+  width: 20px;
+  height: 20px;
 }
 
 .MEDIUM {
@@ -53,9 +53,7 @@
   box-shadow: 0 0 10px rgba($black, 0.075);
 
   &:hover {
-
     svg {
-
       path {
         stroke: $darkBlue;
       }
@@ -68,9 +66,7 @@
   color: $white;
 
   &:hover {
-
     svg {
-
       path {
         stroke: $white;
       }

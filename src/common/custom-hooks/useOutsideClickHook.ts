@@ -1,7 +1,10 @@
 // React
 import { Dispatch, RefObject, SetStateAction, useEffect } from 'react';
 
-function useOutsideClickHook(ref: RefObject<HTMLElement | null>, refSetStateCallback: Dispatch<SetStateAction<boolean>>) {
+function useOutsideClickHook(
+  ref: RefObject<HTMLElement | null>,
+  refSetStateCallback: Dispatch<SetStateAction<boolean>>
+) {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (ref) {

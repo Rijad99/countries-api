@@ -37,10 +37,7 @@ export function ThemeSwitcher() {
   };
 
   return (
-    <Button
-      size={ButtonSize.MEDIUM}
-      onClick={handleChangeTheme}
-    >
+    <Button size={ButtonSize.MEDIUM} onClick={handleChangeTheme}>
       <Svg
         width="24"
         height="24"

@@ -19,11 +19,7 @@ interface TryAgainButtonProps<TData> {
 
 export function TryAgainButton<TData>({ isLoading, onRefetchData }: TryAgainButtonProps<TData>) {
   return (
-    <Button
-      size={ButtonSize.MEDIUM}
-      isLoading={isLoading}
-      onClick={onRefetchData}
-    >
+    <Button size={ButtonSize.MEDIUM} isLoading={isLoading} onClick={onRefetchData}>
       <Svg
         path={icons.refreshIcon}
         strokeWidth={'2'}

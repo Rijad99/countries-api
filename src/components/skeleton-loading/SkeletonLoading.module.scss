@@ -1,8 +1,15 @@
 @import '../../styling/variables.scss';
 
 .skeletonLoaderCircular {
-  background-color: $veryLightBlue;
   border-radius: 8px;
+}
+
+.light {
+  background-color: $gray;
+}
+
+.dark {
+  background-color: $veryDarkBlue;
 }
 
 .pulse {

@@ -10,6 +10,14 @@
   box-shadow: 0 0 10px rgba($black, 0.075);
 }
 
+.light {
+  background-color: $white;
+}
+
+.dark {
+  background-color: $darkBlue;
+}
+ss
 .systemErrorContainer {
   display: flex;
   flex-direction: column;
