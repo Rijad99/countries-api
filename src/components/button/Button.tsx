@@ -36,7 +36,7 @@ function Button(props: PropsWithChildren<ButtonProps>) {
   return (
     <button
       className={`${themeButtonCSS} ${buttonStyle.button} ${buttonCSS} ${isLoadingCSS} ${isDisabledCSS}`}
-      onClick={props.onClick}
+      onClick={isDisabledCSS ? undefined : props.onClick}
     >
       {props.children}
     </button>

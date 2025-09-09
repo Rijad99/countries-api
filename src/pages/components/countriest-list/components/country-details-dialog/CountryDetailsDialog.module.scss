@@ -30,3 +30,9 @@
   transform: rotate(-90deg);
   margin-right: 0.5rem;
 }
+
+@media (max-width: 1200px) {
+  .countryDetailsDialog {
+    padding: 5rem 1rem;
+  }
+}

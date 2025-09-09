@@ -1,3 +1,9 @@
 .regionsFilterSelect {
   width: 150px;
 }
+
+@media (max-width: 840px) {
+  .regionsFilterSelect {
+    width: 100%;
+  }
+}

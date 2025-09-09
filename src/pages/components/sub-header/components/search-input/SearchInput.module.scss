@@ -1,3 +1,9 @@
 .searchInput {
   width: 500px;
 }
+
+@media (max-width: 840px) {
+  .searchInput {
+    width: 100%;
+  }
+}

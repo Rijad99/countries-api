@@ -16,8 +16,8 @@
 }
 
 .disabled {
+  filter: contrast(100%) brightness(0.925);
   cursor: not-allowed;
-  pointer-events: none;
 }
 
 @keyframes rotate-icon {

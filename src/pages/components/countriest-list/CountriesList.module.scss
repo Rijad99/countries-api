@@ -5,3 +5,10 @@
   gap: 4rem;
   padding: 5rem;
 }
+
+@media (max-width: 630px) {
+  .countries {
+    gap: 1rem;
+    padding: 1rem;
+  }
+}

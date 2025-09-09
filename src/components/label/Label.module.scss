@@ -1,6 +1,7 @@
 @import '../../styling/variables.scss';
 
 .labelTitle {
+  white-space: nowrap;
   font-weight: $bold;
 }
 

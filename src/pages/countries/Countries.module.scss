@@ -22,3 +22,9 @@
     overflow-y: auto;
   }
 }
+
+@media (max-width: 840px) {
+  .countriesGrid {
+    grid-template-rows: 120px 160px calc(100vh - 280px);
+  }
+}
