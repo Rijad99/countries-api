@@ -1,21 +1,23 @@
-// React
-import { useState } from 'react';
-
 // Styles
 import countriesStyle from '../../countries/Countries.module.scss';
 import countriesListStyle from './CountriesList.module.scss';
 
-// Components
-import { CountryCard } from './components/country-card/CountryCard';
-import CountryDetailsDialog from './components/country-details-dialog/CountryDetailsDialog';
-
-// Contexts
+// Custom Hooks
 import { useCountryDetailsLoader } from './components/country-details-dialog/useCountryDetailsLoader';
+
+// Types
 import { Country } from '../../countries/countries-types/CountriesTypes.ts';
-import { CountriesSkeletonLoader } from './CountriesSkeletonLoader.tsx';
-import { NoDataToShow } from '../../../components/no-data-to-show/NoDataToShow.tsx';
+
+// TanStack
 import { QueryObserverResult } from '@tanstack/react-query';
-import { SystemError } from '../../../components/system-error/SystemError.tsx';
+
+// Components
+import { CountriesError } from './CountriesError.tsx';
+import { Countries } from './Countries.tsx';
+import { CountryDetailsDialogWrapper } from './CountryDetailsDialogWrapper.tsx';
+import { CountriesSkeletonLoader } from './CountriesSkeletonLoader.tsx';
+import { CountriesNoData } from './CountriesNoData.tsx';
+import { useCountryDetailsDialogHook } from './useCountryDetailsDialogHook.ts';
 
 export interface CountriesListProps {
   countries: Country[] | undefined;
@@ -30,21 +32,18 @@ export function CountriesList({
   isFetchingCountries,
   refetchCountriesData,
 }: CountriesListProps) {
-  const [isCountryDetailsDialogOpen, setIsCountryDetailsDialogOpen] = useState<boolean>(false);
   const { data, error, isFetching, refetchCountryDetails } = useCountryDetailsLoader();
+  const { isCountryDetailsDialogOpen, handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog } =
+    useCountryDetailsDialogHook();
 
-  const handleOpenCountryDetailsDialog = (country: string) => {
-    setIsCountryDetailsDialogOpen(true);
+  const handleOpenDialogAndCountryFetch = (country: string) => {
+    handleOpenCountryDetailsDialog();
     refetchCountryDetails(country);
-  };
-
-  const handleCloseCountryDetailsDialog = () => {
-    setIsCountryDetailsDialogOpen(false);
   };
 
   const renderNoDataComponent =
     (!countries || countries.length === 0) && !countriesError ? (
-      <NoDataToShow<Country[]>
+      <CountriesNoData
         id={'countries-no-data'}
         title={'No Data'}
         label={'There is currently no Countries data do be shown'}
@@ -53,7 +52,7 @@ export function CountriesList({
       />
     ) : null;
   const renderCountriesError = countriesError ? (
-    <SystemError<Country[]>
+    <CountriesError
       id={'countries-system-error'}
       title={'Countries failed to load'}
       label={'System Error occurred while trying to fetch Countries data'}
@@ -64,22 +63,12 @@ export function CountriesList({
   ) : null;
   const renderCountriesSkeletonLoader = isFetchingCountries ? <CountriesSkeletonLoader /> : null;
   const renderCountries =
-    !isFetchingCountries && countries
-      ? countries.map((country, index) => (
-          <CountryCard
-            key={index}
-            flag={country.flags.png}
-            name={country.name.common}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-            handleOpenCountryDetailsDialog={handleOpenCountryDetailsDialog}
-          />
-        ))
-      : null;
+    !isFetchingCountries && countries ? (
+      <Countries countries={countries} handleOpenCountryDetailsDialog={handleOpenDialogAndCountryFetch} />
+    ) : null;
   const renderCountryDetailsDialog = isCountryDetailsDialogOpen ? (
-    <CountryDetailsDialog
-      country={data}
+    <CountryDetailsDialogWrapper
+      data={data}
       error={error}
       isFetchingCountryDetails={isFetching}
       handleCloseCountryDetailsDialog={handleCloseCountryDetailsDialog}
