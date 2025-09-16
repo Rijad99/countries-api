@@ -1,5 +1,5 @@
 // React
-import { useContext } from 'react';
+import { ChangeEvent, useContext } from 'react';
 
 // Types
 import { SvgColors } from '../svg/Svg.types';
@@ -17,12 +17,13 @@ import { ThemeContext } from '../../context/ThemeContext';
 export interface InputProps {
   id: string;
   placeholder?: string;
-  value?: string;
+  value: string;
   icon?: string;
   additionalClasses?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function Input({ id, placeholder, value, icon, additionalClasses }: InputProps) {
+export function Input({ id, placeholder, value, icon, additionalClasses, onChange }: InputProps) {
   const { theme } = useContext(ThemeContext);
 
   const searchIconStrokeColor = theme === Theme.LIGHT ? SvgColors.GRAY : SvgColors.WHITE;
@@ -42,6 +43,7 @@ export function Input({ id, placeholder, value, icon, additionalClasses }: Input
         value={value}
         spellCheck="false"
         autoComplete="off"
+        onChange={onChange}
       />
     </div>
   );

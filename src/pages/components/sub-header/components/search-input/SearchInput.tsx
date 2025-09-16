@@ -6,19 +6,22 @@ import { icons } from '../../../../../common/icons/icons.ts';
 
 // Styles
 import searchInputStyle from './SearchInput.module.scss';
+import { ChangeEvent } from 'react';
 
 export interface SearchInputProps {
-  value?: string;
+  searchValue: string;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function SearchInput({ value }: SearchInputProps) {
+export function SearchInput({ searchValue, onChange }: SearchInputProps) {
   return (
     <Input
       id="countries-search-input"
       placeholder="Search for a country..."
-      value={value}
+      value={searchValue}
       icon={icons.searchIcon}
       additionalClasses={searchInputStyle.searchInput}
+      onChange={onChange}
     />
   );
 }
