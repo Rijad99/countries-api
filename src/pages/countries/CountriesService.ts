@@ -4,9 +4,7 @@ class CountriesServiceImpl {
   private baseUrl = 'https://restcountries.com/v3.1';
 
   getAllCountries = async (): Promise<Country[]> => {
-    const response = await fetch(
-      `${this.baseUrl}/all?fields=flags,name,population,region,capital,subregion,tld,currencies,languages,borders`
-    );
+    const response = await fetch(`${this.baseUrl}/all?fields=flags,name,population,region,capital,subregion,tld,currencies,languages,borders`);
 
     return await response.json();
   };

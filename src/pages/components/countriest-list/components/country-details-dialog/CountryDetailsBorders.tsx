@@ -14,8 +14,7 @@ export interface CountryDetailsBordersProps {
 
 export function CountryDetailsBorders({ country }: CountryDetailsBordersProps) {
   const renderBordersLabel = country && country.borders ? <Label title="Border Countries" /> : null;
-  const renderCountryBorders =
-    country && country.borders?.map((border, index) => <Category key={index} category={border} />);
+  const renderCountryBorders = country && country.borders?.map((border, index) => <Category key={index} category={border} />);
 
   return (
     <div className={countryDetailsBordersStyle.countryDetailsBorders}>

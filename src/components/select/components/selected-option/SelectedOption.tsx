@@ -19,13 +19,7 @@ import { SvgColors, SvgStrokeLineCap, SvgStrokeLineJoin } from '../../../svg/Svg
 // Contexts
 import { ThemeContext } from '../../../../context/ThemeContext';
 
-function SelectedOption({
-  selectedOption,
-  isSelectOpen,
-  placeholder,
-  selectedOptionAdditionalClasses,
-  onSelectOpen,
-}: SelectedOptionProps) {
+function SelectedOption({ selectedOption, isSelectOpen, placeholder, selectedOptionAdditionalClasses, onSelectOpen }: SelectedOptionProps) {
   const { theme } = useContext(ThemeContext);
 
   const handleSelectOpen = useCallback(() => {

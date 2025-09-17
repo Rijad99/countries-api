@@ -13,7 +13,5 @@ interface CountriesNoDataProps<TData> {
 }
 
 export function CountriesNoData<TData>({ id, title, label, isLoading, onRefetchData }: CountriesNoDataProps<TData>) {
-  return (
-    <NoDataToShow<TData> id={id} title={title} label={label} isLoading={isLoading} onRefetchData={onRefetchData} />
-  );
+  return <NoDataToShow<TData> id={id} title={title} label={label} isLoading={isLoading} onRefetchData={onRefetchData} />;
 }

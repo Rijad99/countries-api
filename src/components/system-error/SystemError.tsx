@@ -34,14 +34,7 @@ export function SystemError<TData>({ id, title, label, error, isLoading, onRefet
         <div className={systemErrorStyles.systemErrorContainer}>
           <h5 className={systemErrorStyles.title}>{title}</h5>
           <div className={systemErrorStyles.systemErrorInfo}>
-            <Svg
-              path={icons.errorIcon}
-              strokeWidth={'2'}
-              width="21"
-              height="19"
-              viewBox="0 -0.5 24 24"
-              stroke={SvgColors.RED}
-            />
+            <Svg path={icons.errorIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.RED} />
             <span className={systemErrorStyles.label}>{label}</span>
           </div>
         </div>

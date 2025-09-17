@@ -37,14 +37,7 @@ export function Notification({ id, label, type, onCloseNotification }: Notificat
 
   const renderCloseNotificationButton = onCloseNotification ? (
     <Button size={ButtonSize.SMALL} onClick={onCloseNotification}>
-      <Svg
-        path={icons.closeIcon}
-        strokeWidth={'2'}
-        width="21"
-        height="19"
-        viewBox="0 -0.5 24 24"
-        stroke={SvgColors.GRAY}
-      />
+      <Svg path={icons.closeIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.GRAY} />
     </Button>
   ) : null;
 
@@ -72,58 +65,22 @@ function mapTypeToNotification(type: NotificationType): NotificationState {
     case NotificationType.SUCCESS:
       return {
         title: 'Successful',
-        icon: (
-          <Svg
-            path={icons.checkmarkIcon}
-            strokeWidth={'2'}
-            width="21"
-            height="19"
-            viewBox="0 -0.5 24 24"
-            stroke={SvgColors.GREEN}
-          />
-        ),
+        icon: <Svg path={icons.checkmarkIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.GREEN} />,
       };
     case NotificationType.WARNING:
       return {
         title: 'Warning',
-        icon: (
-          <Svg
-            path={icons.warningIcon}
-            strokeWidth={'2'}
-            width="21"
-            height="19"
-            viewBox="0 -0.5 24 24"
-            stroke={SvgColors.ORANGE}
-          />
-        ),
+        icon: <Svg path={icons.warningIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.ORANGE} />,
       };
     case NotificationType.INFO:
       return {
         title: 'Information',
-        icon: (
-          <Svg
-            path={icons.infoIcon}
-            strokeWidth={'2'}
-            width="21"
-            height="19"
-            viewBox="0 -0.5 24 24"
-            stroke={SvgColors.BLUE}
-          />
-        ),
+        icon: <Svg path={icons.infoIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.BLUE} />,
       };
     case NotificationType.ERROR:
       return {
         title: 'Error',
-        icon: (
-          <Svg
-            path={icons.errorIcon}
-            strokeWidth={'2'}
-            width="21"
-            height="19"
-            viewBox="0 -0.5 24 24"
-            stroke={SvgColors.RED}
-          />
-        ),
+        icon: <Svg path={icons.errorIcon} strokeWidth={'2'} width="21" height="19" viewBox="0 -0.5 24 24" stroke={SvgColors.RED} />,
       };
   }
 }

@@ -1,5 +1,4 @@
 // React
-import { useContext, useState } from 'react';
 
 // Components
 import Select from '../../../../../components/select/Select';
@@ -9,12 +8,6 @@ import { Option } from '../../../../../components/select/components/options/Opti
 
 //  Styles
 import regionsFilterSelectStyle from './RegionsFilter.module.scss';
-
-// Services
-import { CountriesService } from '../../../../countries/CountriesService.ts';
-
-// Contexts
-import { CountriesContext } from '../../../../../context/CountriesContext';
 
 const regions: Option[] = [
   {
@@ -39,28 +32,19 @@ const regions: Option[] = [
   },
 ];
 
-export function RegionsFilter() {
-  const [selectedRegion, setSelectedRegion] = useState<Option | null>(null);
+interface RegionsFilterProps {
+  selectedRegion: Option | null;
+  onRegionChange: (option: Option) => void;
+}
 
-  const { setCountries } = useContext(CountriesContext);
-
-  const handleCountriesUpdateByRegion = (option: Option) => {
-    setSelectedRegion(option);
-
-    CountriesService.getCountriesByRegion(option.value.toLowerCase())
-      .then((data) => {
-        setCountries(data);
-      })
-      .catch((error) => console.log(error));
-  };
-
+export function RegionsFilter({ selectedRegion, onRegionChange }: RegionsFilterProps) {
   return (
     <Select
       additionalClasses={regionsFilterSelectStyle.regionsFilterSelect}
       placeholder="Filter by Region"
       selectedOption={selectedRegion}
       options={regions}
-      onOptionChange={handleCountriesUpdateByRegion}
+      onOptionChange={onRegionChange}
     />
   );
 }

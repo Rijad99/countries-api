@@ -19,13 +19,7 @@ function Options(props: OptionsProps) {
   const { optionsVariant, handleOptionChange } = useOptionsHook(props.onOptionChange);
 
   const options = props.options.map((option) => (
-    <Option
-      key={option.id}
-      id={option.id}
-      value={option.value}
-      icon={option.icon}
-      onOptionChange={() => handleOptionChange(option)}
-    />
+    <Option key={option.id} id={option.id} value={option.value} icon={option.icon} onOptionChange={() => handleOptionChange(option)} />
   ));
 
   const animateSelect = props.isSelectOpen ? optionsVariant.visible : optionsVariant.hidden;

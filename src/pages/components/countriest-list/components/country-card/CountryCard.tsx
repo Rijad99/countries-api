@@ -27,10 +27,7 @@ export function CountryCard({ name, flag, population, region, capital, handleOpe
   };
 
   return (
-    <div
-      className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`}
-      onClick={handleGetCountryAndOpenDetailsDialog}
-    >
+    <div className={`${countryCardStyle[theme]} ${countryCardStyle.countryCard}`} onClick={handleGetCountryAndOpenDetailsDialog}>
       <img src={`${flag}`} className={countryCardStyle.flag} />
       <CountryContent name={name} population={population} region={region} capital={capital} />
     </div>

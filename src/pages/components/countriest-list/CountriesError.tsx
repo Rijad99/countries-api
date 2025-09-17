@@ -13,22 +13,6 @@ interface CountriesErrorProps<TData> {
   onRefetchData: () => Promise<QueryObserverResult<TData, Error>>;
 }
 
-export function CountriesError<TData>({
-  id,
-  title,
-  label,
-  error,
-  isLoading,
-  onRefetchData,
-}: CountriesErrorProps<TData>) {
-  return (
-    <SystemError<TData>
-      id={id}
-      title={title}
-      label={label}
-      error={error}
-      isLoading={isLoading}
-      onRefetchData={onRefetchData}
-    />
-  );
+export function CountriesError<TData>({ id, title, label, error, isLoading, onRefetchData }: CountriesErrorProps<TData>) {
+  return <SystemError<TData> id={id} title={title} label={label} error={error} isLoading={isLoading} onRefetchData={onRefetchData} />;
 }

@@ -29,12 +29,7 @@ export interface CountryDetailsDialogProps {
   handleCloseCountryDetailsDialog: () => void;
 }
 
-function CountryDetailsDialog({
-  country,
-  isFetchingCountryDetails,
-  error,
-  handleCloseCountryDetailsDialog,
-}: CountryDetailsDialogProps) {
+function CountryDetailsDialog({ country, isFetchingCountryDetails, error, handleCloseCountryDetailsDialog }: CountryDetailsDialogProps) {
   const { theme } = useContext(ThemeContext);
 
   const themeIconStrokeColor = theme === Theme.LIGHT ? SvgColors.BLACK : SvgColors.WHITE;

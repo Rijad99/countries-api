@@ -9,20 +9,7 @@ import { SvgProps } from './Svg.types';
 
 const Svg = forwardRef<SVGSVGElement, SvgProps>(
   (
-    {
-      width,
-      height,
-      viewBox,
-      path,
-      color,
-      fillRule,
-      clipRule,
-      stroke,
-      strokeWidth,
-      strokeLinejoin,
-      strokeLinecap,
-      additionalClasses,
-    }: SvgProps,
+    { width, height, viewBox, path, color, fillRule, clipRule, stroke, strokeWidth, strokeLinejoin, strokeLinecap, additionalClasses }: SvgProps,
     ref
   ) => {
     return (

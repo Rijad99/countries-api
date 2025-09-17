@@ -6,16 +6,16 @@ import { SubHeader } from '../components/sub-header/SubHeader';
 // Styles
 import countriesStyle from './Countries.module.scss';
 import { useCountriesLoader } from '../components/countriest-list/components/country-details-dialog/useCountriesLoader.ts';
-import { useCountriesSearchHook } from '../components/sub-header/components/search-input/useCountriesSearchHook.ts';
+import { useCountriesSearchAndFilterHook } from '../components/countriest-list/useCountriesSearchAndFilterHook.ts';
 
 export function Countries() {
   const { countries, error, isFetching, refetchCountriesData } = useCountriesLoader();
-  const { searchValue, renderCountries, handleSearchCountry } = useCountriesSearchHook(countries);
+  const { searchValue, selectedRegion, renderCountries, handleSearchCountry, handleRegionChange } = useCountriesSearchAndFilterHook(countries);
 
   return (
     <div className={countriesStyle.countriesGrid}>
       <Navigation />
-      <SubHeader searchValue={searchValue} onChange={handleSearchCountry} />
+      <SubHeader searchValue={searchValue} selectedRegion={selectedRegion} onChange={handleSearchCountry} onRegionChange={handleRegionChange} />
       <CountriesList
         countries={renderCountries}
         countriesError={error}

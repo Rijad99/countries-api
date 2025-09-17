@@ -26,15 +26,9 @@ export interface CountriesListProps {
   refetchCountriesData: () => Promise<QueryObserverResult<Country[], Error>>;
 }
 
-export function CountriesList({
-  countries,
-  countriesError,
-  isFetchingCountries,
-  refetchCountriesData,
-}: CountriesListProps) {
+export function CountriesList({ countries, countriesError, isFetchingCountries, refetchCountriesData }: CountriesListProps) {
   const { data, error, isFetching, refetchCountryDetails } = useCountryDetailsLoader();
-  const { isCountryDetailsDialogOpen, handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog } =
-    useCountryDetailsDialogHook();
+  const { isCountryDetailsDialogOpen, handleOpenCountryDetailsDialog, handleCloseCountryDetailsDialog } = useCountryDetailsDialogHook();
 
   const handleOpenDialogAndCountryFetch = (country: string) => {
     handleOpenCountryDetailsDialog();
@@ -63,9 +57,7 @@ export function CountriesList({
   ) : null;
   const renderCountriesSkeletonLoader = isFetchingCountries ? <CountriesSkeletonLoader /> : null;
   const renderCountries =
-    !isFetchingCountries && countries ? (
-      <Countries countries={countries} handleOpenCountryDetailsDialog={handleOpenDialogAndCountryFetch} />
-    ) : null;
+    !isFetchingCountries && countries ? <Countries countries={countries} handleOpenCountryDetailsDialog={handleOpenDialogAndCountryFetch} /> : null;
   const renderCountryDetailsDialog = isCountryDetailsDialogOpen ? (
     <CountryDetailsDialogWrapper
       data={data}
