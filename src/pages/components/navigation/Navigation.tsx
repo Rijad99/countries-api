@@ -27,5 +27,9 @@ export interface NavigationTitleProps {
 }
 
 export function NavigationTitle({ title }: NavigationTitleProps) {
-  return <h1 className={navigationStyle.navigationTitle}>{title}</h1>;
+  return (
+    <a href={`/`}>
+      <h1 className={navigationStyle.navigationTitle}>{title}</h1>
+    </a>
+  );
 }
