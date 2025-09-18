@@ -5,7 +5,12 @@
   padding: 3rem 5rem;
 }
 
-@media (max-width: 840px) {
+.leftPartButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 975px) {
   .subHeader {
     display: flex;
     align-items: flex-start;
@@ -18,7 +23,7 @@
 
 @media (max-width: 600px) {
   .subHeader {
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     flex-direction: column;
   }

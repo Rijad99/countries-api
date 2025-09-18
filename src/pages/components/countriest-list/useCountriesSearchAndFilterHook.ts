@@ -26,11 +26,17 @@ export function useCountriesSearchAndFilterHook(countries: Country[] | undefined
     setSelectedRegion(option);
   };
 
+  const handleFilterReset = () => {
+    setSearchValue('');
+    setSelectedRegion(null);
+  };
+
   return {
     searchValue,
     selectedRegion,
     renderCountries,
     handleSearchCountry,
     handleRegionChange,
+    handleFilterReset,
   };
 }

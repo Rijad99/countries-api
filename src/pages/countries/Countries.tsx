@@ -10,12 +10,19 @@ import { useCountriesSearchAndFilterHook } from '../components/countriest-list/u
 
 export function Countries() {
   const { countries, error, isFetching, refetchCountriesData } = useCountriesLoader();
-  const { searchValue, selectedRegion, renderCountries, handleSearchCountry, handleRegionChange } = useCountriesSearchAndFilterHook(countries);
+  const { searchValue, selectedRegion, renderCountries, handleSearchCountry, handleRegionChange, handleFilterReset } =
+    useCountriesSearchAndFilterHook(countries);
 
   return (
     <div className={countriesStyle.countriesGrid}>
       <Navigation />
-      <SubHeader searchValue={searchValue} selectedRegion={selectedRegion} onChange={handleSearchCountry} onRegionChange={handleRegionChange} />
+      <SubHeader
+        searchValue={searchValue}
+        selectedRegion={selectedRegion}
+        onChange={handleSearchCountry}
+        onRegionChange={handleRegionChange}
+        handleFilterReset={handleFilterReset}
+      />
       <CountriesList
         countries={renderCountries}
         countriesError={error}
