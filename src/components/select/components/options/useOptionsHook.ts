@@ -12,6 +12,7 @@ function useOptionsHook(onOptionChange: (option: Option) => void) {
 
   const optionsVariant = {
     visible: {
+      display: 'unset',
       opacity: 1,
       transform: 'translateY(5px) scale(1)',
       transition: {
@@ -19,6 +20,7 @@ function useOptionsHook(onOptionChange: (option: Option) => void) {
       },
     },
     hidden: {
+      display: 'none',
       opacity: 0,
       transform: 'translateY(-10px) scale(0.8)',
       transition: {
