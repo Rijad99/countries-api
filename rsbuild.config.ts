@@ -6,5 +6,11 @@ export default defineConfig({
   plugins: [pluginReact(), pluginSass()],
   html: {
     title: 'Countries',
-  }
+  },
+  output: {
+    distPath: {
+      root: 'public',
+    },
+  },
+
 });
