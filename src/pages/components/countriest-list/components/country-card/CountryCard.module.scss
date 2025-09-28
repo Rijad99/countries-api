@@ -19,3 +19,10 @@
 .dark {
   background-color: $darkBlue;
 }
+
+@media (max-width: 630px) {
+
+  .flag {
+    height: 175px;
+  }
+}
