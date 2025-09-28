@@ -7,4 +7,9 @@ export default defineConfig({
   html: {
     title: 'Countries',
   },
+  output: {
+    distPath: {
+      root: 'dist',
+    },
+  },
 });
